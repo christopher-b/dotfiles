@@ -1,0 +1,8 @@
+--ignore-directory=is:node_modules
+--ignore-directory=is:bower_components
+--ignore-directory=is:bundle
+--ignore-directory=is:tmp
+--ignore-directory=is:log
+--type-set=sass:ext:scss,sass
+--type-set=markdown:ext:md,markdown
+

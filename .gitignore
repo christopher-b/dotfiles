@@ -1,0 +1,27 @@
+# This files breaks from the naming scheme because the actual .gitignore file applies to this repo
+
+# Compiled Python files
+*.pyc
+
+# Folder view configuration files
+.DS_Store
+Desktop.ini
+
+# Thumbnail cache files
+._*
+Thumbs.db
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
+
+# Ruby
+vendor/bundle
+.irb_history
+.capistrano/
+
+# Vim
+*.swp
+.session.vim
+Session.vim
+NetrwTreeListing
