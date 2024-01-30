@@ -25,7 +25,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 HYPHEN_INSENSITIVE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Custom plugins may be added to ~/.oh-my-zsh-custom/plugins/
+# Add plugins as git submodules to play well with YADM:
+# cd ~ && yadm submodule add $plugin_url .oh-my-zsh-custom/$plugin-name
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   bundler
