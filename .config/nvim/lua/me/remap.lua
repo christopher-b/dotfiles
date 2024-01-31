@@ -9,7 +9,7 @@ vim.keymap.set("i", "jk", "<esc> :w<CR>")
 
 -- [[ Files / Buffers ]]
 -- Save buffer
-vim.keymap.set("n", "<Leader>s", ":w<CR>")
+vim.keymap.set("n", "<Leader>s", "<cmd>write<CR>", { desc = "Save current buffer" })
 vim.keymap.set("i", "<M-s>", "normal :w")
 -- New file
 vim.keymap.set("n", "<Leader>n", ":enew<CR>")
@@ -32,8 +32,8 @@ vim.keymap.set("n", "<A-q>", "<Esc>:bprevious<cr>")
 -- Quickfix list
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
-vim.keymap.set("n", "<leader>l", "<cmd>lprev<CR>zz")
+vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz", { desc = "Next location list" })
+vim.keymap.set("n", "<leader>l", "<cmd>lprev<CR>zz", { desc = "Prev location list" })
 
 --vim.keymap.set("n", " ]q :cnext<CR>
 --vim.keymap.set("n", " [q :cprevious<CR>
@@ -42,7 +42,7 @@ vim.keymap.set("n", "<leader>l", "<cmd>lprev<CR>zz")
 --[[ Editing ]]
 -- Paste without losing buffer
 vim.keymap.set("x", "<leader>p", [["_dP]])
-vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
+-- vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- Search/replace current word
 vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])

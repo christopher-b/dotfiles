@@ -13,6 +13,6 @@ return {
     require 'nvim-tree'.setup {}
   end,
   keys = {
-    { "<leader>d", "<cmd>NvimTreeToggle<cr>" }
+    { "<leader>t", "<cmd>NvimTreeToggle<cr>" }
   }
 }
