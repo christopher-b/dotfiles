@@ -1,2 +1,2 @@
-return {"tpope/vim-endwise"}
-
+-- Add `end` to ruby et al blocks
+return { "tpope/vim-endwise" }

@@ -7,12 +7,11 @@ return {
     auto_close = true,
   },
   config = function()
-    vim.g.loaded_netrw = 1
-    vim.g.loaded_netrwPlugin = 1
     vim.opt.termguicolors = true
-    require 'nvim-tree'.setup {}
+    require 'nvim-tree'.setup()
   end,
   keys = {
-    { "<leader>t", "<cmd>NvimTreeToggle<cr>" }
+    { "<leader>t", "<cmd>NvimTreeToggle<cr>",   desc = "Open NvimTree" },
+    { "<leader>T", "<cmd>NvimTreeFindFile<cr>", desc = "Open NvimTree on current file" }
   }
 }
