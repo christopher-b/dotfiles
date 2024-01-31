@@ -47,8 +47,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 # . ~/z.sh
 
-eval "$(~/.rbenv/bin/rbenv init - zsh)"
-
+eval "$(rbenv init - zsh)"
 
 # export PATH="/Users/cbennell/.pyenv/bin:$PATH"
 # eval "$(pyenv init -)"
