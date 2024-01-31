@@ -36,6 +36,7 @@ plugins=(
   # docker-compose
   git
   macos
+  tmux
   web-search
   zsh-autosuggestions
   zsh-syntax-highlighting
@@ -46,7 +47,8 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 # . ~/z.sh
 
-# eval "$(rbenv init -)"
+eval "$(~/.rbenv/bin/rbenv init - zsh)"
+
 
 # export PATH="/Users/cbennell/.pyenv/bin:$PATH"
 # eval "$(pyenv init -)"
