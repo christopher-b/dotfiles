@@ -18,5 +18,6 @@ return {
   end,
   keys = {
     { "<leader>a", "<cmd>AerialToggle!<cr>" },
+    { "<leader>A", "<cmd>AerialNavToggle!<cr>" },
   },
 }
