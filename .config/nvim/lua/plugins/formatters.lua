@@ -4,7 +4,6 @@ return {
   cmd = { "ConformInfo" },
   keys = {
     {
-      -- Customize or remove this keymap to your liking
       "<leader>mp",
       function()
         require("conform").format({
@@ -18,7 +17,6 @@ return {
     },
   },
   opts = {
-    -- Define your formatters
     formatters_by_ft = {
       javascript = { "prettier" },
       typescript = { "prettier" },
@@ -30,18 +28,6 @@ return {
       lua = { "stylua" },
       ruby = { "standardrb" },
     },
-    -- Set up format-on-save
-    format_on_save = { timeout_ms = 500, lsp_fallback = true, async = false },
-
-    -- Customize formatters
-    -- formatters = {
-    --   shfmt = {
-    --     prepend_args = { "-i", "2" },
-    --   },
-    -- },
+    format_on_save = { timeout_ms = 5000, lsp_fallback = true, async = false },
   },
-  -- init = function()
-  --   -- If you want the formatexpr, here is the place to set it
-  --   vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
-  -- end,
 }
