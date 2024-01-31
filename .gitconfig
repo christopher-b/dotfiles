@@ -2,6 +2,9 @@
 	name = Christopher Bennell
 	email = christopher@emergencyinhaler.com
 
+[include]
+  path = .gitconfig-local
+
 [apply]
   # Detect whitespace errors when applying a patch
   #whitespace = fix
@@ -9,9 +12,6 @@
 [alias]
   # https://dance.computer.dance/posts/2015/02/making-chruby-and-binstubs-play-nice.html
   trust = "!mkdir -p .git/safe"
-
-[credential]
-	helper = osxkeychain
 
 [core]
 	excludesfile = ~/.gitignore
