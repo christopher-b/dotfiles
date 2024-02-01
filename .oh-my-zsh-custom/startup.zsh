@@ -3,7 +3,10 @@ if [[ -f /opt/homebrew/bin/brew ]]; then
 fi
 
 # rbenv
-eval "$($HOME/.rbenv/bin/rbenv init - zsh)"
+if [[ -d $HOME/.rbenv/bin ]]; then
+  PATH=$HOME/.rbenv/bin:$PATH
+fi
+eval "$(rbenv init - zsh)"
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
