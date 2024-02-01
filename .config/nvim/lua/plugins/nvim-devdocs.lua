@@ -7,16 +7,13 @@ return {
   },
   lazy = false,
   opts = {
-    -- previewer_cmd = "glow",
-    -- cmd_args = { "-s", "dark", "-w", "80" },
-    -- picker_cmd_args = { "-s", "dark", "-w", "50" },
     mappings = { -- keymaps for the doc buffer
       open_in_browser = "<leader>oo<cr>"
     },
   },
   keys = {
-    { "<leader>di", "<cmd>DevdocsInstall<cr>",   desc = "Install docs" },
-    { "<leader>do", "<cmd>DevdocsOpenFloat<cr>", desc = "Open docs" },
+    { "<leader>di", "<cmd>DevdocsInstall<cr>",   desc = "Install devdocs" },
+    { "<leader>do", "<cmd>DevdocsOpenFloat<cr>", desc = "Open devdocs" },
     { "<leader>dt", "<cmd>DevdocsToggle<cr>",    desc = "Toggle devdocs floating window" },
   },
 }

@@ -1,6 +1,7 @@
 -- https://github.com/nvim-telescope/telescope.nvim?tab=readme-ov-file#pickers
 return {
-  "nvim-telescope/telescope.nvim", branch = "0.1.x",
+  "nvim-telescope/telescope.nvim",
+  branch = "0.1.x",
   lazy = false,
   dependencies = {
     { "nvim-lua/plenary.nvim" },
@@ -28,20 +29,21 @@ return {
   end,
   keys = {
     {
-      "<leader>o", function()
-        if(1 == vim.fn.isdirectory(".git")) then
+      "<leader>o",
+      function()
+        if (1 == vim.fn.isdirectory(".git")) then
           vim.cmd("Telescope git_files")
         else
           vim.cmd("Telescope find_files")
         end
       end,
-      desc = "Search for files"
+      desc = "Open file (telescope)"
     },
     { "<leader>fs", "<cmd>Telescope live_grep<cr>" },
     { "<leader>fc", "<cmd>Telescope grep_string<cr>" },
     { "<leader>fr", "<cmd>Telescope oldfiles<cr>" },
     { "<leader>fh", "<cmd>Telescope search_history<cr>" },
-    { "<leader>b", "<cmd>Telescope buffers<cr>" },
+    { "<leader>b",  "<cmd>Telescope buffers<cr>" },
     -- quickfix, loclist, current_buffer_fuzzy_find
     -- lsp_references, lsp_incoming_calls, lsp_outgoing_calls, lsp_document_symbols, lsp_workspace_symbols, lsp_dynamic_workspace_symbols
   },

@@ -11,7 +11,7 @@ return {
     require 'nvim-tree'.setup()
   end,
   keys = {
-    { "<leader>t", "<cmd>NvimTreeToggle<cr>",   desc = "Open NvimTree" },
-    { "<leader>T", "<cmd>NvimTreeFindFile<cr>", desc = "Open NvimTree on current file" }
+    { "<leader>t", "<cmd>NvimTreeToggle<cr>",   desc = "NvimTree" },
+    { "<leader>T", "<cmd>NvimTreeFindFile<cr>", desc = "NvimTree: current file" }
   }
 }

@@ -19,8 +19,8 @@ return {
       end,
     })
 
-    vim.keymap.set("n", "<leader>ml", function()
+    vim.keymap.set("n", "<leader>pl", function()
       lint.try_lint()
-    end, { desc = "Trigger linting for current file" })
+    end, { desc = "Linting buffer" })
   end,
 }

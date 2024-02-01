@@ -6,21 +6,19 @@ return {
     vim.o.timeoutlen = 300
   end,
   config = function()
-    local wk = require("which-key")
-    -- wk.register({
-    --   ["<leader>c"] = { name = "+code" },
-    -- })
-    wk.register({
-      ["<leader>"] = {
-        c = {
-          name = "+code",
-        },
+    require("which-key").register(
+      {
+        c = { name = "code", },
+        d = { name = "devdocs", },
+        f = { name = "find", },
+        g = { name = "git", },
+        p = { name = "pretty", },
+        x = { name = "trouble", },
       },
-    })
+      { prefix = "<leader>" }
+    )
   end,
   opts = {
-    window = {
-      border = "single",
-    }
+    window = { border = "single" },
   }
 }
