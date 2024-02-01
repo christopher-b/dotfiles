@@ -29,3 +29,14 @@ export PATH=$PATH:/opt/homebrew/opt/libpq/bin
 export PATH=$PATH:/opt/homebrew/opt/postgresql@16/bin
 export LDFLAGS="-L/opt/homebrew/opt/postgresql@16/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/postgresql@16/include"
+
+# Prevent many instances of $HOME/.zcompdump*
+export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
+
+# Terminal colors
+export CLICOLOR=1
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+
+# Yarn
+export PATH="$HOME/.yarn/bin:$PATH"
+

@@ -8,21 +8,46 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Prevent many instances of $HOME/.zcompdump*
-export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
-
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-# export PATH="$HOME/.rbenv/bin:$PATH"
-
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
 
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-POWERLEVEL9K_MODE='awesome-patched'
+# POWERLEVEL10K_MODE='awesome-patched'
 ZSH_THEME="powerlevel10k/powerlevel10k"
+
+# Hyphen-insensitive completion.
 HYPHEN_INSENSITIVE="true"
+
+# Auto-update behaviour
+zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+zstyle ':omz:update' frequency 7
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+ENABLE_CORRECTION="true"
+# Uncomment the following line to display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
+COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="trues ohmyzsh="mate ~/.oh-my-zsh""
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh-custom/plugins/
@@ -45,30 +70,10 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-# . ~/z.sh
 
-eval "$(rbenv init - zsh)"
-
-# export PATH="/Users/cbennell/.pyenv/bin:$PATH"
-# eval "$(pyenv init -)"
-# eval "$(pyenv virtualenv-init -)"
-
-export CLICOLOR=1
-export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
-
-# Powerlevel9k
+# Powerlevel10k
 DEFAULT_USER=cbennell
 ZLE_RPROMPT_INDENT=0
-# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
-# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status load)
-# POWERLEVEL9K_DIR_SHOW_WRITABLE=true
-# POWERLEVEL9K_VCS_GIT_HOOKS=(vcs-detect-changes git-untracked git-aheadbehind git-stash git-remotebranch git-tagname)
-# POWERLEVEL9K_VCS_GIT_ICON=''
-# POWERLEVEL9K_VCS_GIT_GITHUB_ICON=''
-# POWERLEVEL9K_VCS_GIT_GITLAB_ICON=''
-# POWERLEVEL9K_BATTERY_VERBOSE=false
-
-# export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -83,36 +88,8 @@ ZLE_RPROMPT_INDENT=0
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-export PATH="$HOME/.yarn/bin:$PATH"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-function blt() {
-  if [[ ! -z ${AH_SITE_ENVIRONMENT} ]]; then
-    PROJECT_ROOT="/var/www/html/${AH_SITE_GROUP}.${AH_SITE_ENVIRONMENT}"
-  elif [ "`git rev-parse --show-cdup 2> /dev/null`" != "" ]; then
-    PROJECT_ROOT=$(git rev-parse --show-cdup)
-  else
-    PROJECT_ROOT="."
-  fi
-
-  if [ -f "$PROJECT_ROOT/vendor/bin/blt" ]; then
-    $PROJECT_ROOT/vendor/bin/blt "$@"
-
-  # Check for local BLT.
-  elif [ -f "./vendor/bin/blt" ]; then
-    ./vendor/bin/blt "$@"
-
-  else
-    echo "You must run this command from within a BLT-generated project."
-    return 1
-  fi
-}
 
 # Profile zsh startup. Paied with mod load call at top of this file
 # zprof
