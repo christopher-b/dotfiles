@@ -10,3 +10,7 @@ eval "$(rbenv init - zsh)"
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Source functions
+for f in ~/.oh-my-zsh-custom/functions/*; do source $f; done
+

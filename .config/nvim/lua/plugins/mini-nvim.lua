@@ -2,7 +2,7 @@
 return {
   "echasnovski/mini.nvim",
   config = function()
-    require("mini.pairs").setup()   -- matching brackets, quotes etc.
-    require("mini.starter").setup() -- matching brackets, quotes etc.
+    require("mini.pairs").setup()      -- matching brackets, quotes etc.
+    require("mini.starter").setup({})  -- start page
   end
 }

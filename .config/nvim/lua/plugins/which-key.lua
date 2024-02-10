@@ -12,6 +12,7 @@ return {
         d = { name = "devdocs", },
         f = { name = "find", },
         g = { name = "git", },
+        h = { name = "harpoon", },
         p = { name = "pretty", },
         x = { name = "trouble", },
       },

@@ -38,3 +38,4 @@ tell application "Reminders"
 end tell
 EOF
 }
+
