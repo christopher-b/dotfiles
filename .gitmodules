@@ -7,3 +7,6 @@
 [submodule ".oh-my-zsh-custom/themes/powerlevel10k"]
 	path = .oh-my-zsh-custom/themes/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
+[submodule ".oh-my-zsh-custom/plugins/fzf-tab"]
+	path = .oh-my-zsh-custom/plugins/fzf-tab
+	url = git@github.com:Aloxaf/fzf-tab.git

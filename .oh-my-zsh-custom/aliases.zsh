@@ -1,4 +1,4 @@
-# alias chardis="awk -vFS=\"\" '{for(i=1;i<=NF;i++)w[$i]++}END{for(i in w) print i,w[i]}' -"
+# alias chardis="awk -vFS=\"\" '{for(i=1;i<=NF;i++)w[$i]++}END{for(i in w) print i,w[i]}' -"alias
 
 # Misc
 alias :q='exit'
@@ -27,6 +27,7 @@ alias rrc='bundle exec cap production rails:console'
 alias y='yadm'
 alias ya='yadm add'
 alias yc='yadm commit'
+alias ycm='yadm commit -m'
 alias yd='yadm diff'
 alias ypu='yadm push'
 alias ypl='yadm pull'

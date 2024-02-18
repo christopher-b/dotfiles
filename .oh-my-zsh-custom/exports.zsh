@@ -40,3 +40,8 @@ export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 # Yarn
 export PATH="$HOME/.yarn/bin:$PATH"
 
+# FZF
+# export FZF_DEFAULT_COMMAND='find .'
+# export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
+export FZF_CTRL_T_OPTS=" --preview 'bat -n --color=always {}'"
+export FZF_TMUX_OPTS='-p80%,60%'
