@@ -8,7 +8,11 @@ return {
   },
   config = function()
     vim.opt.termguicolors = true
-    require 'nvim-tree'.setup()
+    require 'nvim-tree'.setup({
+      view = {
+        side = "right",
+      },
+    })
   end,
   keys = {
     { "<leader>t", "<cmd>NvimTreeToggle<cr>",   desc = "NvimTree" },
