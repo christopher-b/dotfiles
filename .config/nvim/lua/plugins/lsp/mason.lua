@@ -33,8 +33,10 @@ return {
         "lua_ls",
         "marksman",
         "quick_lint_js",
-        "solargraph",
+        -- "solargraph",
+        "ruby_ls",
         "standardrb",
+        "stimulus_ls",
         "yamlls",
       },
       -- auto-install configured servers (with lspconfig)
