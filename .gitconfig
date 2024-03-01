@@ -1,6 +1,6 @@
 [user]
 	name = Christopher Bennell
-	email = christopher@emergencyinhaler.com
+	email = cbennell@hey.com
 
 [include]
   path = .gitconfig-local
