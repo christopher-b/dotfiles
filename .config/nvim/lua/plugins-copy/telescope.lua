@@ -20,7 +20,6 @@ return {
             ["<C-k>"] = actions.move_selection_previous,
             ["<C-j>"] = actions.move_selection_next,
             ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
-            ["<C-a>"] = actions.select_all
           }
         }
       }

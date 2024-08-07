@@ -14,21 +14,23 @@ export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
 # Highlight section titles in manual pages
 export LESS_TERMCAP_md="$ORANGE"
 
+export PATH="/home/cbennell/bin:$PATH"
+
 # For capybara-webkit
-export PATH="/Users/cbennell/Applications/Qt5.5.0/5.5/clang_64/bin:$PATH"
+# export PATH="/Users/cbennell/Applications/Qt5.5.0/5.5/clang_64/bin:$PATH"
 
 # Make sure homebrew ruby is first in PATH
-export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-export PATH="/opt/homebrew/lib/ruby/gems/3.1.0/bin:$PATH"
-export PATH="/opt/homebrew/lib/ruby/gems/3.2.0/bin:$PATH"
-export PATH=$PATH:/usr/local/bin
-export PATH=$PATH:~/.composer
+# export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+# export PATH="/opt/homebrew/lib/ruby/gems/3.1.0/bin:$PATH"
+# export PATH="/opt/homebrew/lib/ruby/gems/3.2.0/bin:$PATH"
+# export PATH=$PATH:/usr/local/bin
+# export PATH=$PATH:~/.composer
 
 # Postgresql
-export PATH=$PATH:/opt/homebrew/opt/libpq/bin
-export PATH=$PATH:/opt/homebrew/opt/postgresql@16/bin
-export LDFLAGS="-L/opt/homebrew/opt/postgresql@16/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/postgresql@16/include"
+# export PATH=$PATH:/opt/homebrew/opt/libpq/bin
+# export PATH=$PATH:/opt/homebrew/opt/postgresql@16/bin
+# export LDFLAGS="-L/opt/homebrew/opt/postgresql@16/lib"
+# export CPPFLAGS="-I/opt/homebrew/opt/postgresql@16/include"
 
 # Prevent many instances of $HOME/.zcompdump*
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
@@ -38,7 +40,7 @@ export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
 # Yarn
-export PATH="$HOME/.yarn/bin:$PATH"
+# export PATH="$HOME/.yarn/bin:$PATH"
 
 # FZF
 # export FZF_DEFAULT_COMMAND='find .'

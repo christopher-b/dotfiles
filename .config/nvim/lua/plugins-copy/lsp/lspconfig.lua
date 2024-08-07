@@ -32,7 +32,7 @@ return {
       keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts) -- show lsp type definitions
 
       opts.desc = "See available code actions"
-      keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
+      keymap.set({ "n", "v" }, "<leader>cx", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
 
       opts.desc = "Smart rename"
       keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
@@ -92,12 +92,12 @@ return {
       on_attach = on_attach,
     })
 
-    lspconfig["solargraph"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-      init_options = { formatting = true },
-      -- settings = { diagnostic = false, }
-    })
+    -- lspconfig["solargraph"].setup({
+    --   capabilities = capabilities,
+    --   on_attach = on_attach,
+    --   init_options = { formatting = true },
+    --   -- settings = { diagnostic = false, }
+    -- })
 
     lspconfig["standardrb"].setup({
       capabilities = capabilities,
@@ -107,10 +107,10 @@ return {
     lspconfig["stimulus_ls"].setup({
     })
 
-    lspconfig["yamlls"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
+    -- lspconfig["yamlls"].setup({
+    --   capabilities = capabilities,
+    --   on_attach = on_attach,
+    -- })
 
     -- ruby-lsp requires some extra config. See https://github.com/Shopify/ruby-lsp/blob/main/EDITORS.md#Neovim-LSP
     -- textDocument/diagnostic support until 0.10.0 is released
@@ -161,7 +161,6 @@ return {
     local function add_ruby_deps_command(client, bufnr)
       vim.api.nvim_buf_create_user_command(bufnr, "ShowRubyDeps",
         function(opts)
-
           local params = vim.lsp.util.make_text_document_params()
 
           local showAll = opts.args == "all"
@@ -190,13 +189,16 @@ return {
               vim.fn.setqflist(qf_list)
               vim.cmd('copen')
             end, bufnr)
-        end, {nargs = "?", complete = function()
-          return {"all"}
-        end})
+        end, {
+          nargs = "?",
+          complete = function()
+            return { "all" }
+          end
+        })
     end
 
 
-    require("lspconfig").ruby_ls.setup({
+    require("lspconfig").ruby_lsp.setup({
       on_attach = function(client, buffer)
         setup_diagnostics(client, buffer)
         add_ruby_deps_command(client, buffer)

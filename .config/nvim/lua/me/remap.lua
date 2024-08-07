@@ -25,13 +25,16 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Vzzzv")
 
--- Buffers
-vim.keymap.set("n", "<A-w>", "<Esc>:bnext<cr>")
-vim.keymap.set("n", "<A-q>", "<Esc>:bprevious<cr>")
+-- Buffer navigation
+vim.keymap.set("n", "<A-s>", "<Esc>:bnext<cr>")
+vim.keymap.set("n", "<A-a>", "<Esc>:bprevious<cr>")
+
+vim.keymap.set("n", "<A-M-Right>", "<Esc>:bnext<cr>")
+vim.keymap.set("n", "<A-M-Left>", "<Esc>:bprevious<cr>")
 
 -- Quickfix list
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "<A-j>", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<A-k>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz", { desc = "Next location list" })
 vim.keymap.set("n", "<leader>l", "<cmd>lprev<CR>zz", { desc = "Prev location list" })
 
@@ -65,6 +68,10 @@ vim.keymap.set({ "i", "n" }, "<A-CR>", "<ESC>o")
 
 -- Join, but keep cursor in place
 vim.keymap.set("n", "J", "mzJ`z")
+
+-- Comments
+vim.keymap.set("n", "<Leader>/", "gcc")
+vim.keymap.set("v", "<Leader>/", "gc")
 
 --[[
 -- Move current line down up

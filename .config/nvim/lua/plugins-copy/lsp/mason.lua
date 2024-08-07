@@ -34,7 +34,7 @@ return {
         "marksman",
         "quick_lint_js",
         -- "solargraph",
-        "ruby_ls",
+        "ruby_lsp",
         "standardrb",
         "stimulus_ls",
         "yamlls",
