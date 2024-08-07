@@ -98,3 +98,6 @@ ZLE_RPROMPT_INDENT=0
 
 # Profile zsh startup. Paied with mod load call at top of this file
 # zprof
+
+# Lando
+export PATH="/Users/cbennell/.lando/bin${PATH+:$PATH}"; #landopath
