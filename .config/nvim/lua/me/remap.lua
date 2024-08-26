@@ -33,7 +33,7 @@ vim.keymap.set("n", "<A-M-Right>", "<Esc>:bnext<cr>")
 vim.keymap.set("n", "<A-M-Left>", "<Esc>:bprevious<cr>")
 
 -- Quickfix list
-vim.akeymap.set("n", "<A-j>", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<A-j>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<A-k>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz", { desc = "Next location list" })
 vim.keymap.set("n", "<leader>l", "<cmd>lprev<CR>zz", { desc = "Prev location list" })
