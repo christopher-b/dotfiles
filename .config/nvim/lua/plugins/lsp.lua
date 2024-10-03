@@ -191,7 +191,7 @@ return {
         "quick_lint_js",
         "ruby_lsp",
         "standardrb",
-        "stimulus_ls",
+        -- "stimulus_ls",
         "yamlls",
       },
       handlers = {
