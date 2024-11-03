@@ -14,6 +14,8 @@ export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
 # Highlight section titles in manual pages
 export LESS_TERMCAP_md="$ORANGE"
 
+# Lando
+export PATH="/Users/cbennell/.lando/bin${PATH+:$PATH}"; #landopath
 export PATH="/home/cbennell/bin:$PATH"
 
 # For capybara-webkit

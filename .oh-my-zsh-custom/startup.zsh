@@ -12,7 +12,7 @@ eval "$(rbenv init - zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # zoxide
-which -s zoxide > /dev/null && eval "$(zoxide init zsh)"
+# which -s zoxide > /dev/null && eval "$(zoxide init zsh)"
 
 # Source functions
 for f in ~/.oh-my-zsh-custom/functions/*; do source $f; done

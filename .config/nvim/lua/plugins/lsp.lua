@@ -125,7 +125,7 @@ return {
         ["<CR>"] = cmp.mapping.confirm({select = false}),
         ["<C-Space>"] = cmp.mapping.complete(),
         ["<Tab>"] = cmp_action.tab_complete(),
-        ["<S-Tab>"] = cmp_action.select_prev_or_fallback(),
+        -- ["<S-Tab>"] = cmp_action.select_prev_or_fallback(),
         ["<C-f>"] = cmp_action.luasnip_jump_forward(),
         ["<C-b>"] = cmp_action.luasnip_jump_backward(),
       }),

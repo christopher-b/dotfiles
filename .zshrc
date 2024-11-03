@@ -1,6 +1,8 @@
 # Profile zsh startup. Paied with zprof call at bottom of this file
 # zmodload zsh/zprof
 
+skip_global_compinit=1
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -20,7 +22,7 @@ HYPHEN_INSENSITIVE="true"
 
 # Auto-update behaviour
 zstyle ':omz:update' mode reminder  # just remind me to update when it's time
-zstyle ':omz:update' frequency 7
+# zstyle ':omz:update' frequency 7
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -29,7 +31,8 @@ zstyle ':omz:update' frequency 7
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
+
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
 # e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
@@ -59,10 +62,11 @@ export PATH=/opt/homebrew/bin/:$PATH
 # cd ~ && yadm submodule add $plugin_url .oh-my-zsh-custom/$plugin-name
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  bundler
   # colorize
   # docker
   # docker-compose
+  #
+  bundler
   fzf-tab
   git
   macos
@@ -98,6 +102,3 @@ ZLE_RPROMPT_INDENT=0
 
 # Profile zsh startup. Paied with mod load call at top of this file
 # zprof
-
-# Lando
-export PATH="/Users/cbennell/.lando/bin${PATH+:$PATH}"; #landopath
