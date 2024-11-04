@@ -100,5 +100,9 @@ ZLE_RPROMPT_INDENT=0
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Lando
+# @TODO move to exports
+export PATH="/home/cbennell/.lando/bin${PATH+:$PATH}"; #landopath
+
 # Profile zsh startup. Paied with mod load call at top of this file
 # zprof
