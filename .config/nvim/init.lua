@@ -25,5 +25,5 @@ https://github.com/jiangmiao/auto-pairs
 https://learnvimscriptthehardway.stevelosh.com/
 https://learnvim.irian.to/customize/vim_runtime
 https://github.com/tpope/vim-ragtag/blob/master/doc/ragtag.txt
-jhttps://github.com/ThePrimeagen/harpoon
+https://github.com/simrat39/symbols-outline.nvim
 --]]

@@ -152,17 +152,16 @@ return {
       {
         {
           name = "path",
-          option = {
-            treat_trailing_slash = false,
-          },
+          option = { trailing_slash = true },
         }
       },
       {
         {
           name = "cmdline",
-          -- option = {
-          --   ignore_cmds = { "Man", "!" }
-          -- }
+          option = {
+            treat_trailing_slash = false
+            -- ignore_cmds = { "Man", "!" }
+          }
         }
       })
     })
