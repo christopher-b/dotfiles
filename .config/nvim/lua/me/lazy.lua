@@ -19,7 +19,8 @@ require("lazy").setup({
   spec = {
     -- { import = "plugins/aerial" },
     -- { import = "plugins/colorize" },
-    { import = "plugins/colorscheme" },
+    -- { import = "plugins/colorscheme" },
+    { import = "plugins/color-nightfox" },
     { import = "plugins/dressing" },
     { import = "plugins/formatting" },
     { import = "plugins/harpoon" },
