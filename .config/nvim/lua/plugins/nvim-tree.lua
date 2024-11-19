@@ -16,6 +16,9 @@ return {
   end,
   keys = {
     { "<leader>t", "<cmd>NvimTreeToggle<cr>",   desc = "NvimTree" },
-    { "<leader>T", "<cmd>NvimTreeFindFile<cr>", desc = "NvimTree: current file" }
+    { "<leader>T", "<cmd>NvimTreeFindFile<cr>", desc = "NvimTree: current file" },
+    -- { "<leader>tm", tree_actions_menu, { buffer = 0, noremap = true, silent = true }}
+    -- vim.keymap.set("n", "<C-Space>", tree_actions_menu,
+    -- { buffer = buffer, noremap = true, silent = true })
   }
 }

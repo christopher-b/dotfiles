@@ -18,6 +18,8 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = {
     -- { import = "plugins/aerial" },
+    { import = "plugins/ai"},
+    -- { import = "plugins/avante"},
     -- { import = "plugins/colorize" },
     -- { import = "plugins/colorscheme" },
     { import = "plugins/color-nightfox" },

@@ -12,6 +12,8 @@ return {
     "hrsh7th/cmp-cmdline",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
+    "hrsh7th/cmp-nvim-lsp-document-symbol",
+    "hrsh7th/cmp-nvim-lsp-signature-help",
     -- {
     --   name = "L3MON4D3/LuaSnip",
     --   build = "make install_jsregexp"
@@ -87,6 +89,7 @@ return {
         {name = "path"},
         {name = "luasnip"},
         {name = "nvim_lua"},
+        {name = "nvim_lsp_signature_help"},
       },
 
       -- completion = {
@@ -124,7 +127,7 @@ return {
       mapping = cmp.mapping.preset.insert({
         ["<CR>"] = cmp.mapping.confirm({select = false}),
         ["<C-Space>"] = cmp.mapping.complete(),
-        ["<Tab>"] = cmp_action.tab_complete(),
+        ["<S-Tab>"] = cmp_action.tab_complete(),
         -- ["<S-Tab>"] = cmp_action.select_prev_or_fallback(),
         ["<C-f>"] = cmp_action.luasnip_jump_forward(),
         ["<C-b>"] = cmp_action.luasnip_jump_backward(),

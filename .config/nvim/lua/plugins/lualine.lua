@@ -48,6 +48,9 @@ return {
 
       }, -- "encoding"
       -- lualine_y = {"progress"},
+      lualine_z = {
+        { "location", color = { gui = "NONE" } }
+      }
     },
     tabline = {
       lualine_a = {
