@@ -3,7 +3,12 @@
 return {
   "VonHeikemen/lsp-zero.nvim",
   dependencies = {
-    "williamboman/mason.nvim",
+    {
+      "williamboman/mason.nvim",
+      keys = {
+        { "<leader>m", "<cmd>Mason<cr>", desc = "Mason" }
+      }
+    },
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
     "hrsh7th/nvim-cmp",
@@ -191,8 +196,8 @@ return {
         "lua_ls",
         "marksman",
         "quick_lint_js",
-        "ruby_lsp",
-        "standardrb",
+        -- "ruby_lsp",
+        -- "standardrb",
         -- "stimulus_ls",
         "yamlls",
       },

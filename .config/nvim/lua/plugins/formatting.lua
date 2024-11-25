@@ -15,7 +15,7 @@ return {
         markdown = { "prettier" },
         graphql = { "prettier" },
         lua = { "stylua" },
-        ruby = { "standardrb" }
+        -- ruby = { "standardrb" }
       },
       -- format_on_save = {
       --   lsp_fallback = true,

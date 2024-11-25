@@ -29,6 +29,7 @@ require("lazy").setup({
     { import = "plugins/lazygit" },
     { import = "plugins/linters" },
     { import = "plugins/lsp" },
+    { import = "plugins/lsp-ruby" },
     { import = "plugins/lualine" },
     -- { import = "plugins/mini-nvim" },
     { import = "plugins/noice" },

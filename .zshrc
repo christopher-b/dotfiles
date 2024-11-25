@@ -70,6 +70,7 @@ plugins=(
   fzf-tab
   git
   macos
+  mise
   tmux
   web-search
   zsh-autosuggestions

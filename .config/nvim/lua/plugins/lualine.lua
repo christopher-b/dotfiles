@@ -5,13 +5,14 @@ return {
   },
   lazy = false,
   opts = {
-    -- options = {
+    options = {
       -- section_separators = { left = "", right = "" },
       -- component_separators = { left = "", right = "" },
       -- section_separators = "",
       -- component_separators = "",
       -- theme = custom_theme
-    -- },
+      disabled_filetypes = { "NvimTree" },
+    },
     extensions = { "lazy", "mason", "nerdtree", "quickfix", "trouble" },
     sections = {
       lualine_a = {
