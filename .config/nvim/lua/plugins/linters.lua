@@ -5,7 +5,7 @@ return {
   opts = {
     linters_by_ft = {
       javascript = { "eslint_d" },
-      ruby = { "standardrb" },
+      -- ruby = { "standardrb" },
     }
   },
   config = function()

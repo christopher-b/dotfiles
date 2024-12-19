@@ -3,7 +3,10 @@ vim.g.mapleader = " "
 -- Save left hand travel
 vim.keymap.set("i", "jk", "<esc> :w<CR>")
 
--- Terminal insert mode
+-- Terminal escape insert mode
+vim.keymap.set("t", "jk", "<C-\\><C-n>")
+-- vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
+
 -- vim.keymap.set("t", " jk <C-\><C-n>
 
 
