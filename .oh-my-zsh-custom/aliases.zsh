@@ -20,7 +20,7 @@ alias vim='nvim'
 alias be='bundle exec'
 alias bi='bundle install'
 alias rc='bundle exec rails console'
-alias rbenv-init='eval "$(rbenv init -)"'
+# alias rbenv-init='eval "$(rbenv init -)"'
 alias rrc='bundle exec cap production rails:console'
 
 # YADM
