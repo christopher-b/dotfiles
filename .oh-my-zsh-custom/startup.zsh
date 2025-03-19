@@ -17,3 +17,10 @@ fi
 # Source functions
 for f in ~/.oh-my-zsh-custom/functions/*; do source $f; done
 
+# Mise
+eval "$(~/.local/bin/mise activate zsh)"
+
+if [[ "$(uname)" == "Linux" ]]; then
+   # Add Linux-specific commands here
+else
+fi
