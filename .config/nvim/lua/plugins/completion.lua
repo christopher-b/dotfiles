@@ -20,7 +20,7 @@ return {
     },
 
     -- experimental signature help support
-    signature = { enabled = true }
+    -- signature = { enabled = true }
   },
   -- opts_extend = { "sources.default" }
 }
