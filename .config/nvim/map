@@ -1,0 +1,63 @@
+
+
+
+   <Space>mp   * <Lua 30: ~/.config/nvim/lua/plugins/formatters.lua:8>
+                 Format buffer
+n  <Space>ml   * <Lua 431: ~/.config/nvim/lua/plugins/linters.lua:22>
+                 Trigger linting for current file
+n  <Space>t    * <Cmd>NvimTreeToggle<CR>
+n  <Space>dt   * <Cmd>DevdocsToggle<CR>
+                 Toggle devdocs floating window
+n  <Space>do   * <Cmd>DevdocsOpenFloat<CR>
+                 Open docs
+n  <Space>di   * <Cmd>DevdocsInstall<CR>
+                 Install docs
+n  <Space>b    * <Cmd>Telescope buffers<CR>
+n  <Space>fh   * <Cmd>Telescope search_history<CR>
+n  <Space>fr   * <Cmd>Telescope oldfiles<CR>
+n  <Space>fc   * <Cmd>Telescope grep_string<CR>
+n  <Space>fs   * <Cmd>Telescope live_grep<CR>
+n  <Space>o    * <Lua 47: ~/.config/nvim/lua/plugins/telescope.lua:31>
+                 Search for files
+n  <Space>/    * <Lua 46: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:112>
+n  <Space>?    * <Lua 45: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:112>
+x  <Space>/    * <Lua 42: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:112>
+n  <Space>u    * <Lua 41: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:112>
+n  <Space>xw   * <Lua 23: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:112>
+n  <Space>xx   * <Lua 22: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:112>
+n  <Space>xl   * <Lua 20: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:112>
+n  <Space>xq   * <Lua 19: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:112>
+n  <Space>xd   * <Lua 17: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:112>
+n  <Space>a    * <Lua 16: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:112>
+n  <Space>GP   * <Lua 13: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:112>
+n  <Space>gs   * <Lua 12: ~/.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua:112>
+n  <Space>Y    * "*Y
+v  <Space>y    * "*y
+n  <Space>y    * "*y
+n  <Space>r    * :%s/\<<C-R><C-W>\>/<C-R><C-W>/gI<Left><Left><Left>
+v  <Space>d    * "_d
+n  <Space>d    * "_d
+x  <Space>p    * "_dP
+n  <Space>l    * <Cmd>lprev<CR>zz
+n  <Space>k    * <Cmd>lnext<CR>zz
+n  <Space>W    * :tabclose<CR>
+n  <Space>w    * :bp|bd #<CR>
+n  <Space>n    * :enew<CR>
+n  <Space>s    * :w<CR>
+x  #           * y?\V<C-R>"<CR>
+                 Nvim builtin
+o  %             <Plug>(MatchitOperationForward)
+x  %             <Plug>(MatchitVisualForward)
+n  %             <Plug>(MatchitNormalForward)
+n  &           * :&&<CR>
+                 Nvim builtin
+x  *           * y/\V<C-R>"<CR>
+                 Nvim builtin
+n  J           * mzJ`z
+v  J           * :m '>+1<CR>gv=gv
+v  K           * :m '<-2<CR>gv=gv
+n  N           * Vzzzv
+x  S             <Plug>Vurround
+n  Y           * y$
+                 Nvim builtin
+

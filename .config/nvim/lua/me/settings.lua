@@ -24,21 +24,21 @@ vim.o.undodir = os.getenv("HOME") .. ".vim/undodir"
 
 -- Use rg as default :grep engine
 local function set_grepprg()
-    local cmd = 'rg --vimgrep '
-    if vim.o.ignorecase then
-        if vim.o.smartcase then
-            cmd = cmd .. '-S ' --smartcase
-        else
-            cmd = cmd .. '-i ' --ignore-case
-        end
+  local cmd = 'rg --vimgrep '
+  if vim.o.ignorecase then
+    if vim.o.smartcase then
+      cmd = cmd .. '-S ' --smartcase
+    else
+      cmd = cmd .. '-i ' --ignore-case
     end
+  end
 
-    vim.o.grepprg = cmd
+  vim.o.grepprg = cmd
 end
 set_grepprg()
 vim.o.grepformat = '%f:%l:%c:%m'
 vim.api.nvim_create_autocmd('OptionSet', {
-    group = vim.api.nvim_create_augroup('rg', { clear = true }),
-    pattern = 'ignorecase,smartcase',
-    callback = set_grepprg,
+  group = vim.api.nvim_create_augroup('rg', { clear = true }),
+  pattern = 'ignorecase,smartcase',
+  callback = set_grepprg,
 })

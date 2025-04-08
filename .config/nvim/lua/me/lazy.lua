@@ -5,7 +5,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   if vim.v.shell_error ~= 0 then
     vim.api.nvim_echo({
       { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out, "WarningMsg" },
+      { out,                            "WarningMsg" },
       { "\nPress any key to exit..." },
     }, true, {})
     vim.fn.getchar()
@@ -24,13 +24,14 @@ require("lazy").setup({
     -- { import = "plugins/colorscheme" },
     { import = "plugins/color-nightfox" },
     { import = "plugins/completion" },
-    { import = "plugins/dressing" },
+    -- { import = "plugins/dap" },
+    -- { import = "plugins/dressing" },
     { import = "plugins/formatting" },
-    { import = "plugins/harpoon" },
+    -- { import = "plugins/harpoon" },
     { import = "plugins/lazygit" },
     { import = "plugins/linters" },
     { import = "plugins/lsp" },
-    { import = "plugins/lsp-ruby" },
+    -- { import = "plugins/lsp-ruby" },
     { import = "plugins/lualine" },
     -- { import = "plugins/mini-nvim" },
     { import = "plugins/noice" },
@@ -42,12 +43,12 @@ require("lazy").setup({
     { import = "plugins/nvim-treesitter" },
     { import = "plugins/nvim-web-devicons" },
     { import = "plugins/telescope" },
-    { import = "plugins/terminal" },
+    -- { import = "plugins/terminal" },
     { import = "plugins/trouble" },
     -- { import = "plugins/undotree" },
     { import = "plugins/vim-endwise" },
     { import = "plugins/vim-surround" },
     { import = "plugins/vim-tmux-navigator" },
-    { import = "plugins/which-key" },
+    -- { import = "plugins/which-key" },
   },
 })
