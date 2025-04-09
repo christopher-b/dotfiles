@@ -5,7 +5,7 @@ local my_group = augroup("myGroup", { clear = true })
 -- Strip whitespace
 autocmd("BufWritePre", {
   group = my_group,
-  pattern = {"*"},
+  pattern = { "*" },
   command = [[:%s/\s\+$//e]],
 })
 
@@ -20,8 +20,7 @@ autocmd("InsertLeave", {
   desc = "Toggle relativenumber option when entering and leaving insert mode",
 })
 
-
-autocmd({"VimEnter", "WinEnter", "BufWinEnter" }, {
+autocmd({ "VimEnter", "WinEnter", "BufWinEnter" }, {
   group = my_group,
   command = "setlocal cursorline",
   desc = "Cursor line only on active pane",
@@ -31,6 +30,22 @@ autocmd("WinLeave", {
   command = "setlocal nocursorline",
   desc = "Cursor line only on active pane",
 })
+
+-- autocmd("BufWritePre", {
+--   group = my_group,
+--   pattern = "*",
+--   callback = function()
+--     vim.lsp.buf.format({ async = false })
+--   end,
+--   desc = "Auto format on save using LSP"
+-- })
+
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+--   pattern = "*",
+--   callback = function()
+--     vim.lsp.buf.format({ async = false })
+--   end,
+-- })
 
 
 -- autocmd("InsertLeave", {
@@ -45,4 +60,3 @@ autocmd("WinLeave", {
 --     end
 --   end
 -- })
-

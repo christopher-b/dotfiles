@@ -30,7 +30,7 @@ require("lazy").setup({
     { import = "plugins/nvim-treesitter" },
     { import = "plugins/nvim-treesitter-text-objects" },
     { import = "plugins/nvim-web-devicons" },
-    { import = "plugins/snacks" }, -- Dashboard
+    { import = "plugins/snacks" }, -- Dashboard,
     { import = "plugins/telescope" },
     { import = "plugins/trouble" },
     { import = "plugins/vim-endwise" },
@@ -38,18 +38,5 @@ require("lazy").setup({
     { import = "plugins/vim-surround" },
     { import = "plugins/vim-tmux-navigator" },
     { import = "plugins/which-key" }
-    -- { import = "plugins/aerial" },
-    -- { import = "plugins/ai"},
-    -- { import = "plugins/avante"},
-    -- { import = "plugins/colorize" },
-    -- { import = "plugins/colorscheme" },
-    -- { import = "plugins/dressing" },
-    -- { import = "plugins/harpoon" },
-    -- { import = "plugins/lazygit" },
-    -- { import = "plugins/mini-nvim" },
-    -- { import = "plugins/nvim-devdocs" },
-    -- { import = "plugins/nvim-treesitter-context" },
-    -- { import = "plugins/terminal" },
-    -- { import = "plugins/undotree" },
   },
 })
