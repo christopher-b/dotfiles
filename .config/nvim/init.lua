@@ -2,10 +2,10 @@
 vim.g.loaded_netrw       = 1
 vim.g.loaded_netrwPlugin = 1
 
-require("me.remap")
-require("me.autocmd")
-require("me.settings")
-require("me.lazy")
+require("cbennell.remap")
+require("cbennell.autocmd")
+require("cbennell.settings")
+require("cbennell.lazy")
 
 --[[
 Follow up

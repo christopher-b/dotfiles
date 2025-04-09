@@ -20,7 +20,7 @@ require("lazy").setup({
     { import = "plugins/colors" },
     { import = "plugins/completion" },
     { import = "plugins/formatting" },
-    -- { import = "plugins/lint" },
+    { import = "plugins/lint" },
     { import = "plugins/lsp" },
     { import = "plugins/lsp-ruby" },
     { import = "plugins/statusline" },
