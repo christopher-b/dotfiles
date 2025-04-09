@@ -54,6 +54,7 @@ return {
       enabled = true,
       configure = true,
     },
+    notifier = { enabled = true },
     picker = { enabled = true },
   },
   keys = {
