@@ -7,9 +7,11 @@ require("cbennell.autocmd")
 require("cbennell.settings")
 require("cbennell.lazy")
 
+-- require("cbennell.filter-diagnostics")
+-- vim.lsp.enable("ruby_lsp")
+
 --[[
 Follow up
-
 https://github.com/tpope/vim-surround
 https://github.com/tpope/vim-rails
 https://github.com/Shougo/neosnippet.vim

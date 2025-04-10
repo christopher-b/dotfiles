@@ -3,7 +3,6 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
     "neovim/nvim-lspconfig",
-    "VonHeikemen/lsp-zero.nvim",
   },
   config = true,
   opts = {

@@ -42,3 +42,14 @@ vim.api.nvim_create_autocmd('OptionSet', {
   pattern = 'ignorecase,smartcase',
   callback = set_grepprg,
 })
+
+vim.diagnostic.config({
+  -- virtual_lines = true
+  virtual_text = true
+
+  -- Alternatively, customize specific options
+  -- virtual_lines = {
+  --  -- Only show virtual line diagnostics for the current cursor line
+  --  current_line = true,
+  -- },
+})

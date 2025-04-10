@@ -5,8 +5,7 @@ return {
     "mikavilpas/blink-ripgrep.nvim",
     -- "giuxtaposition/blink-cmp-copilot",
   },
-  -- version = 'v0.*',
-  version = "v0.7",
+  version = "v1.*",
   opts = {
     sources = {
       default = {
@@ -29,5 +28,5 @@ return {
     -- experimental signature help support
     -- signature = { enabled = true }
   },
-  -- opts_extend = { "sources.default" }
+  opts_extend = { "sources.default" }
 }

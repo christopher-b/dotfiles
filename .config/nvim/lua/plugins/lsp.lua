@@ -41,18 +41,18 @@ return {
     }
 
     -- Automatically set up LSP severs installed by Mason
-    require("mason-lspconfig").setup_handlers {
-      function(server_name) -- Default handler
-        -- config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
-        local blink_capabilities = require("blink.cmp").get_lsp_capabilities()
-        require("lspconfig")[server_name].setup { capabilities = blink_capabilities }
-      end,
-
-      -- Handler overrides for specific setup. Ex:
-      -- ["rust_analyzer"] = function()
-      --   require("rust-tools").setup {}
-      -- end
-    }
+    -- require("mason-lspconfig").setup_handlers {
+    --   function(server_name) -- Default handler
+    --     -- config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
+    --     local blink_capabilities = require("blink.cmp").get_lsp_capabilities()
+    --     require("lspconfig")[server_name].setup { capabilities = blink_capabilities }
+    --   end,
+    --
+    --   -- Handler overrides for specific setup. Ex:
+    --   -- ["rust_analyzer"] = function()
+    --   --   require("rust-tools").setup {}
+    --   -- end
+    -- }
 
     vim.api.nvim_create_autocmd("LspAttach", {
       callback = function(args)
@@ -60,7 +60,7 @@ return {
         if not client then return end
 
         -- Format the current buffer on save
-        if client.supports_method("textDocument/formatting") then
+        if client:supports_method("textDocument/formatting") then
           vim.api.nvim_create_autocmd("BufWritePre", {
             buffer = args.buf,
             callback = function()
