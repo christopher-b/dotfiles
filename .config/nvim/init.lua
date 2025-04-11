@@ -3,6 +3,10 @@ require("cbennell.remap")
 require("cbennell.autocmd")
 require("cbennell.lazy")
 
+-- vim.lsp.set_log_level('trace')
+-- vim.lsp.set_log_level('debug')
+-- require('vim.lsp.log').set_format_func(vim.inspect)
+
 -- require("cbennell.filter-diagnostics")
 -- vim.lsp.enable("ruby_lsp")
 
@@ -32,6 +36,7 @@ require("lazy").setup({
     { import = "plugins/which-key" }
   },
 })
+
 --[[
 Follow up
 https://github.com/tpope/vim-surround
