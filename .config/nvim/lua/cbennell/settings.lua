@@ -1,3 +1,7 @@
+-- As per nvim-tree docs: :help nvim-tree-netrw
+vim.g.loaded_netrw       = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- Indent
 vim.o.expandtab = true
 vim.o.shiftwidth = 2

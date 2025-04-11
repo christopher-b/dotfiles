@@ -1,15 +1,37 @@
--- As per nvim-tree docs: :help nvim-tree-netrw
-vim.g.loaded_netrw       = 1
-vim.g.loaded_netrwPlugin = 1
-
+require("cbennell.settings")
 require("cbennell.remap")
 require("cbennell.autocmd")
-require("cbennell.settings")
 require("cbennell.lazy")
 
 -- require("cbennell.filter-diagnostics")
 -- vim.lsp.enable("ruby_lsp")
 
+-- require("lazy").setup({ { import = "plugins" }, { import = "plugins.lsp" } })
+require("lazy").setup({
+  spec = {
+    { import = "plugins/colors" },
+    -- { import = "plugins/completion" },
+    { import = "plugins/formatting" },
+    { import = "plugins/lint" },
+    { import = "plugins/lsp" },
+    { import = "plugins/lsp-ruby" },
+    { import = "plugins/statusline" },
+    { import = "plugins/noice" },
+    -- { import = "plugins/nvim-notify" },
+    { import = "plugins/nvim-tree" },
+    { import = "plugins/nvim-treesitter" },
+    { import = "plugins/nvim-treesitter-text-objects" },
+    { import = "plugins/nvim-web-devicons" },
+    { import = "plugins/snacks" }, -- Dashboard,
+    { import = "plugins/telescope" },
+    { import = "plugins/trouble" },
+    { import = "plugins/vim-endwise" },
+    { import = "plugins/vim-indent-object" },
+    { import = "plugins/vim-surround" },
+    { import = "plugins/vim-tmux-navigator" },
+    { import = "plugins/which-key" }
+  },
+})
 --[[
 Follow up
 https://github.com/tpope/vim-surround
