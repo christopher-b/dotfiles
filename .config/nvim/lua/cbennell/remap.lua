@@ -9,7 +9,6 @@ vim.keymap.set("t", "jk", "<C-\\><C-n>")
 
 -- vim.keymap.set("t", " jk <C-\><C-n>
 
-
 -- [[ Files / Buffers ]]
 -- Save buffer
 vim.keymap.set("n", "<Leader>s", "<cmd>write<CR>", { desc = "Save current buffer" })
@@ -20,7 +19,6 @@ vim.keymap.set("n", "<Leader>n", ":enew<CR>")
 vim.keymap.set("n", "<Leader>w", ":bp|bd #<CR>")
 vim.keymap.set("n", "<Leader>W", ":tabclose<CR>")
 
-
 -- [[ Navigation ]]
 -- Ctrl-u and -d keep cursor in the middle
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -29,9 +27,9 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Vzzzv")
 
 -- Buffer navigation
-vim.keymap.set("n", "<A-s>", "<Esc>:bnext<cr>")
-vim.keymap.set("n", "<A-a>", "<Esc>:bprevious<cr>")
-
+-- vim.keymap.set("n", "<A-s>", "<Esc>:bnext<cr>")
+-- vim.keymap.set("n", "<A-a>", "<Esc>:bprevious<cr>")
+-- These mimic keys used for switching browser tabs
 vim.keymap.set("n", "<A-M-Right>", "<Esc>:bnext<cr>")
 vim.keymap.set("n", "<A-M-Left>", "<Esc>:bprevious<cr>")
 
@@ -41,10 +39,6 @@ vim.keymap.set("n", "<A-k>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz", { desc = "Next location list" })
 vim.keymap.set("n", "<leader>l", "<cmd>lprev<CR>zz", { desc = "Prev location list" })
 
---vim.keymap.set("n", " ]q :cnext<CR>
---vim.keymap.set("n", " [q :cprevious<CR>
-
-
 --[[ Editing ]]
 -- Paste without losing buffer
 vim.keymap.set("x", "<leader>p", [["_dP]])
@@ -52,7 +46,6 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- Search/replace current word
 vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-
 
 -- Yank to system
 -- vim.keymap.set({ "n", "v" }, "<leader>y", [["*y]])
@@ -86,9 +79,6 @@ vim.keymap.set("n", "A-k> dd2kp
 --[[ ?? ]]
 -- Search escape highlight
 vim.keymap.set("n", "mm", ":noh<CR>")
-
-
-
 
 --[[
 -- Buffer/tab navigation

@@ -2,13 +2,14 @@ local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 local my_group = augroup("myGroup", { clear = true })
 
--- Strip whitespace
+-- Strip whitespace before save
 autocmd("BufWritePre", {
   group = my_group,
   pattern = { "*" },
   command = [[:%s/\s\+$//e]],
 })
 
+-- Switch line numbering in normal/insert
 autocmd("InsertEnter", {
   group = my_group,
   command = ":set norelativenumber",
@@ -39,15 +40,6 @@ autocmd("WinLeave", {
 --   end,
 --   desc = "Auto format on save using LSP"
 -- })
-
--- vim.api.nvim_create_autocmd("BufWritePre", {
---   pattern = "*",
---   callback = function()
---     vim.lsp.buf.format({ async = false })
---   end,
--- })
-
-
 -- autocmd("InsertLeave", {
 --   group = mygroup,
 --   desc = "Save a file when leaving insert, if writable",

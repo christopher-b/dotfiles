@@ -3,18 +3,17 @@ require("cbennell.remap")
 require("cbennell.autocmd")
 require("cbennell.lazy")
 
+-- require("cbennell.filter-diagnostics")
+-- vim.lsp.enable("ruby_lsp")
 -- vim.lsp.set_log_level('trace')
 -- vim.lsp.set_log_level('debug')
 -- require('vim.lsp.log').set_format_func(vim.inspect)
 
--- require("cbennell.filter-diagnostics")
--- vim.lsp.enable("ruby_lsp")
-
--- require("lazy").setup({ { import = "plugins" }, { import = "plugins.lsp" } })
 require("lazy").setup({
   spec = {
     { import = "plugins/colors" },
     -- { import = "plugins/completion" },
+    -- { import = "plugins/dap" },
     { import = "plugins/formatting" },
     { import = "plugins/lint" },
     { import = "plugins/lsp" },
@@ -39,7 +38,6 @@ require("lazy").setup({
 
 --[[
 Follow up
-https://github.com/tpope/vim-surround
 https://github.com/tpope/vim-rails
 https://github.com/Shougo/neosnippet.vim
 https://www.vimfromscratch.com/articles/vim-for-ruby-and-rails-in-2019
