@@ -8,10 +8,6 @@ return {
     "Gemfile",
     ".ruby-version",
   },
-  -- settings = {
-  --   capabilities: {
-  --   },
-  -- },
   init_options = {
     formatter = "standard",
     linters = { "standard" },

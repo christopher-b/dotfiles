@@ -1,95 +1,97 @@
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
-    "williamboman/mason-lspconfig.nvim",
-    "williamboman/mason.nvim",
     "saghen/blink.cmp",
     {
-      "folke/lazydev.nvim", -- Better lua_ls config for editing neovim config
-      ft = "lua",           -- only load on lua files
+      "williamboman/mason-lspconfig.nvim",
       opts = {
-        library = { { path = "${3rd}/luv/library", words = { "vim%.uv" } }, },
+        automatic_installation = false,
+        ensure_installed = {
+          "lua_ls",
+          "bashls",
+          "dockerls",
+          "eslint",
+          -- "html",
+          -- "intelephense",
+          "marksman",
+          -- "quick_lint_js",
+          "stimulus_ls",
+          "yamlls",
+        },
+      },
+    },
+    {
+      -- Must come after mason-lspconfig, so that this is evaluated first
+      "williamboman/mason.nvim",
+      opts = {
+        ui = {
+          icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗",
+          },
+        },
+      },
+    },
+    {
+      "folke/lazydev.nvim", -- Better lua_ls config for editing neovim config
+      ft = "lua", -- only load on lua files
+      opts = {
+        library = {
+          {
+            path = "${3rd}/luv/library",
+            words = { "vim%.uv" },
+          },
+        },
       },
     },
   },
-  config = function()
-    require("mason").setup {
-      ui = {
-        icons = {
-          package_installed = "✓",
-          package_pending = "➜",
-          package_uninstalled = "✗",
-        },
-      },
-    }
-
-    require("mason-lspconfig").setup {
-      automatic_installation = false,
-      ensure_installed = { "lua_ls" }
-      -- "bashls",
-      -- "dockerls",
-      -- "eslint",
-      -- "html",
-      -- "intelephense",
-      -- "lua_ls",
-      -- "marksman",
-      -- "quick_lint_js",
-      -- "ruby_lsp",
-      -- "standardrb",
-      -- "stimulus_ls",
-      -- "yamlls",
-    }
-
+  init = function()
     -- Automatically set up LSP severs installed by Mason
-    -- require("mason-lspconfig").setup_handlers {
-    --   function(server_name) -- Default handler
-    --     -- config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
-    --     local blink_capabilities = require("blink.cmp").get_lsp_capabilities()
-    --     require("lspconfig")[server_name].setup { capabilities = blink_capabilities }
-    --   end,
-    --
-    --   -- Handler overrides for specific setup. Ex:
-    --   -- ["rust_analyzer"] = function()
-    --   --   require("rust-tools").setup {}
-    --   -- end
-    -- }
+    require("mason-lspconfig").setup_handlers({
+      -- Default handler
+      function(server_name)
+        -- Blink adds additional capabilities that we report to the LSP
+        local capabilities = require("blink.cmp").get_lsp_capabilities()
+        vim.lsp.config(server_name, { capabilities = capabilities })
+        vim.lsp.enable(server_name)
+        -- require("lspconfig")[server_name].setup({ capabilities = capabilities })
+      end,
 
-    vim.api.nvim_create_autocmd("LspAttach", {
-      callback = function(args)
-        local client = vim.lsp.get_client_by_id(args.data.client_id)
-        if not client then return end
-
-        -- Format the current buffer on save
-        if client:supports_method("textDocument/formatting") then
-          vim.api.nvim_create_autocmd("BufWritePre", {
-            buffer = args.buf,
-            callback = function()
-              vim.lsp.buf.format({ bufnr = args.buf, id = client.id })
-            end,
-          })
-        end
-      end
+      -- Handler overrides for specific setup. Ex:
+      -- ["rust_analyzer"] = function()
+      --   require("rust-tools").setup {}
+      -- end
     })
 
+    -- We currently have conform doing format-on-save
+    -- vim.api.nvim_create_autocmd("LspAttach", {
+    --   callback = function(args)
+    --     local client = vim.lsp.get_client_by_id(args.data.client_id)
+    --     if not client then return end
+    --     -- Format the current buffer on save
+    --     if client:supports_method("textDocument/formatting") then
+    --       vim.api.nvim_create_autocmd("BufWritePre", {
+    --         buffer = args.buf,
+    --         callback = function()
+    --           vim.lsp.buf.format({ bufnr = args.buf, id = client.id })
+    --         end,
+    --       })
+    --     end
+    --   end,
+    -- })
+
     -- Gutter icons
-    local signs = {
-      { name = "DiagnosticSignError", text = " " }, -- You can use any icon/text
-      { name = "DiagnosticSignWarn", text = " " },
-      { name = "DiagnosticSignInfo", text = " " },
-      { name = "DiagnosticSignHint", text = "󰌵 " },
-    }
-    for _, sign in ipairs(signs) do
-      vim.fn.sign_define(sign.name, {
-        texthl = sign.name,
-        text = sign.text,
-        numhl = sign.name
-      })
-    end
-    -- vim.cmd([[
-    --   highlight DiagnosticSignError guifg=#db4b4b
-    --   highlight DiagnosticSignWarn guifg=#e0af68
-    --   highlight DiagnosticSignInfo guifg=#0db9d7
-    --   highlight DiagnosticSignHint guifg=#10B981
-    -- ]])
-  end
+    local severity = vim.diagnostic.severity
+    vim.diagnostic.config({
+      signs = {
+        text = {
+          [severity.ERROR] = " ",
+          [severity.WARN] = " ",
+          [severity.INFO] = " ",
+          [severity.HINT] = " 󰌵",
+        },
+      },
+    })
+  end,
 }

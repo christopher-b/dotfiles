@@ -1,7 +1,7 @@
 return {
   "EdenEast/nightfox.nvim",
   lazy = false,
-  config = function()
+  init = function()
     vim.cmd.colorscheme("nightfox")
   end,
 }

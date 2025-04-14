@@ -1,12 +1,12 @@
+-- Complements the built-in language server client for languages where there are no language servers, or where standalone linters provide better results.
 return {
   "mfussenegger/nvim-lint",
   lazy = true,
-  event = { "BufReadPre", "BufNewFile" }, -- to disable, comment this out
+  event = { "BufReadPre", "BufNewFile" },
   opts = {
     linters_by_ft = {
       javascript = { "eslint_d" },
-      -- ruby = { "standardrb" },
-    }
+    },
   },
   config = function()
     local lint = require("lint")
@@ -19,7 +19,7 @@ return {
       end,
     })
 
-    vim.keymap.set("n", "<leader>pl", function()
+    vim.keymap.set("n", "<leader>cl", function()
       lint.try_lint()
     end, { desc = "Linting buffer" })
   end,

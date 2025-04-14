@@ -21,7 +21,7 @@ return {
          ...       E#t      .E##E      .D#;     G#t    ED.        E#t :K#t     ##D.    E#t       ...
          ...       ..         G#E        tt      t     t          E#t ...      #G      ..        ...
          ...                   fE                                 ,;.          j                 ...
-         ...                    ,                                                                ...]]
+         ...                    ,                                                                ...]],
       },
       sections = {
         { section = "header" },
@@ -47,7 +47,7 @@ return {
     indent = {
       enabled = true,
       only_scope = true,
-      animate = { enabled = false }
+      animate = { enabled = false },
     },
     lazygit = {
       enabled = true,
@@ -57,10 +57,34 @@ return {
     picker = { enabled = true },
   },
   keys = {
-    { "<leader>gs", function() Snacks.lazygit() end,                desc = "LazyGit" },
-    { "<leader>:",  function() Snacks.picker.command_history() end, desc = "Command History" },
-    { "<leader>n",  function() Snacks.picker.notifications() end,   desc = "Notification History" },
-    { "<leader>.",  function() Snacks.scratch() end,                desc = "Toggle Scratch Buffer" },
-    { "<leader>S",  function() Snacks.scratch.select() end,         desc = "Select Scratch Buffer" },
+    {
+      "<leader>gs",
+      function()
+        Snacks.lazygit()
+      end,
+      desc = "LazyGit",
+    },
+    -- { "<leader>:",  function() Snacks.picker.command_history() end, desc = "Command History" },
+    {
+      "<leader>n",
+      function()
+        Snacks.picker.notifications()
+      end,
+      desc = "Notification History",
+    },
+    {
+      "<leader>.",
+      function()
+        Snacks.scratch()
+      end,
+      desc = "Toggle Scratch Buffer",
+    },
+    {
+      "<leader>S",
+      function()
+        Snacks.scratch.select()
+      end,
+      desc = "Select Scratch Buffer",
+    },
   },
 }

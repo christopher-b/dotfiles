@@ -2,34 +2,35 @@
 return {
   "stevearc/conform.nvim",
   event = { "BufReadPre", "BufNewFile" },
+  cmd = { "ConformInfo" },
   opts = {
     formatters_by_ft = {
-      javascript = { "prettier" },
-      typescript = { "prettier" },
       css = { "prettier" },
       html = { "prettier" },
+      javascript = { "prettier" },
       json = { "prettier" },
-      yaml = { "prettier" },
-      markdown = { "prettier" },
-      graphql = { "prettier" },
       lua = { "stylua" },
-      -- ruby = { "standardrb" }
+      markdown = { "prettier" },
+      typescript = { "prettier" },
+      yaml = { "prettier" },
+      -- ruby = { "standardrb" } -- we use the LSP
     },
-    -- Set default options
     default_format_opts = {
       lsp_format = "fallback",
     },
-    format_on_save = { timeout_ms = 500 },
-    -- Customize formatters
-    -- formatters = {
-    --   shfmt = { prepend_args = { "-i", "2" }, },
-    -- },
+    -- This sets up a format-on-save autocommand
+    format_on_save = {
+      timeout_ms = 500,
+    },
   },
   keys = {
     {
-      "<leader>mp",
+      "<leader>cf",
       function()
-        require("conform").format({ async = true })
+        require("conform").format({
+          async = true,
+          lsp_format = "first",
+        })
       end,
       mode = { "n", "v" },
       desc = "Format buffer",

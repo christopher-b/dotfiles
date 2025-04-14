@@ -20,10 +20,11 @@ return {
             ["<C-k>"] = actions.move_selection_previous,
             ["<C-j>"] = actions.move_selection_next,
             ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
-            ["<C-a>"] = actions.select_all
-          }
-        }
-      }
+            ["<C-a>"] = actions.select_all,
+            ["<esc>"] = actions.close,
+          },
+        },
+      },
     })
 
     telescope.load_extension("fzf")
@@ -32,19 +33,20 @@ return {
     {
       "<leader>o",
       function()
-        if (1 == vim.fn.isdirectory(".git")) then
+        if 1 == vim.fn.isdirectory(".git") then
           vim.cmd("Telescope git_files")
         else
           vim.cmd("Telescope find_files")
         end
       end,
-      desc = "Open file (telescope)"
+      desc = "Open file (telescope)",
     },
     { "<leader>fs", "<cmd>Telescope live_grep<cr>" },
     { "<leader>fc", "<cmd>Telescope grep_string<cr>" },
     { "<leader>fr", "<cmd>Telescope oldfiles<cr>" },
     { "<leader>fh", "<cmd>Telescope search_history<cr>" },
-    { "<leader>b",  "<cmd>Telescope buffers<cr>" },
+    { "<leader>b", "<cmd>Telescope buffers<cr>" },
+    { "<leader>f?", "<cmd>Telescope help_tags<cr>" },
     -- quickfix, loclist, current_buffer_fuzzy_find
     -- lsp_references, lsp_incoming_calls, lsp_outgoing_calls, lsp_document_symbols, lsp_workspace_symbols, lsp_dynamic_workspace_symbols
   },

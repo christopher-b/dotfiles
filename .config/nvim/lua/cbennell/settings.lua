@@ -1,5 +1,5 @@
 -- As per nvim-tree docs: :help nvim-tree-netrw
-vim.g.loaded_netrw       = 1
+vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 -- Indent
@@ -28,28 +28,28 @@ vim.o.undodir = os.getenv("HOME") .. ".vim/undodir"
 
 -- Use rg as default :grep engine
 local function set_grepprg()
-  local cmd = 'rg --vimgrep '
+  local cmd = "rg --vimgrep "
   if vim.o.ignorecase then
     if vim.o.smartcase then
-      cmd = cmd .. '-S ' --smartcase
+      cmd = cmd .. "-S " --smartcase
     else
-      cmd = cmd .. '-i ' --ignore-case
+      cmd = cmd .. "-i " --ignore-case
     end
   end
 
   vim.o.grepprg = cmd
 end
 set_grepprg()
-vim.o.grepformat = '%f:%l:%c:%m'
-vim.api.nvim_create_autocmd('OptionSet', {
-  group = vim.api.nvim_create_augroup('rg', { clear = true }),
-  pattern = 'ignorecase,smartcase',
+vim.o.grepformat = "%f:%l:%c:%m"
+vim.api.nvim_create_autocmd("OptionSet", {
+  group = vim.api.nvim_create_augroup("rg", { clear = true }),
+  pattern = "ignorecase,smartcase",
   callback = set_grepprg,
 })
 
 vim.diagnostic.config({
-  -- virtual_lines = true
-  virtual_text = true
+  -- virtual_lines = true,
+  virtual_text = true,
 
   -- Alternatively, customize specific options
   -- virtual_lines = {

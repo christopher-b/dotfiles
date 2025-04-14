@@ -6,11 +6,6 @@ return {
   lazy = false,
   opts = {
     options = {
-      -- section_separators = { left = "", right = "" },
-      -- component_separators = { left = "", right = "" },
-      -- section_separators = "",
-      -- component_separators = "",
-      -- theme = custom_theme
       disabled_filetypes = { "NvimTree" },
     },
     extensions = { "lazy", "mason", "nerdtree", "quickfix", "trouble" },
@@ -21,17 +16,18 @@ return {
           color = { gui = "NONE" },
         },
       },
-      -- lualine_b = {"branch", "diff", "diagnostics"},
+      lualine_b = { "branch", "diff", "diagnostics" },
       lualine_c = {
-        { "filename", path = 4, }
+        { "filename", path = 4 },
       },
       lualine_x = {
         "searchcount",
         "filetype",
+        -- "encoding",
         {
           -- Show LSP servers
           function()
-            local clients = vim.lsp.get_clients( { bufnr = 0 })
+            local clients = vim.lsp.get_clients({ bufnr = 0 })
             if next(clients) == nil then
               -- return "No LSP"
               return ""
@@ -44,14 +40,13 @@ return {
 
             return table.concat(client_names, "/")
           end,
-          icon = "󰅩"
+          -- icon = "󰅩",
         },
-
-      }, -- "encoding"
-      -- lualine_y = {"progress"},
+      },
+      lualine_y = { "progress" },
       lualine_z = {
-        { "location", color = { gui = "NONE" } }
-      }
+        { "location", color = { gui = "NONE" } },
+      },
     },
     tabline = {
       lualine_a = {
@@ -70,49 +65,4 @@ return {
       -- lualine_z = {"tabs"}
     },
   },
-  -- config = function()
-  --   local lualine = require("lualine")
-  --
-  --   -- Theme
-  --   -- local custom_theme = require("lualine.themes.base16")
-  --   -- custom_theme.inactive.a.bg = "#303030"
-  --   -- custom_theme.inactive.a.fg = "#d8dee9"
-  --   -- custom_theme.normal.a.bg = "#8FADAF"
-  --   -- custom_theme.command.b.bg = "#ebcb8b"
-  --
-  --   lualine.setup({
-  --     options = {
-  --       -- section_separators = { left = "", right = "" },
-  --       -- component_separators = { left = "", right = "" },
-  --       section_separators = "",
-  --       component_separators = "",
-  --       theme = custom_theme
-  --     },
-  --     extensions = { "lazy", "mason", "nerdtree", "quickfix", "trouble" },
-  --     sections = {
-  --       -- lualine_a = {"mode"},
-  --       -- lualine_b = {"branch", "diff", "diagnostics"},
-  --       lualine_c = {
-  --         { "filename", path = 4, }
-  --       },
-  --       lualine_x = { "searchcount", "filetype" }, -- "encoding"
-  --       -- lualine_y = {"progress"},
-  --     },
-  --     tabline = {
-  --       lualine_a = {
-  --         {
-  --           "buffers",
-  --           color = { gui = "NONE" },
-  --           -- use_mode_colors = true,
-  --         },
-  --       },
-  --       lualine_b = {},
-  --       lualine_c = {},
-  --       lualine_x = {},
-  --       lualine_y = {},
-  --       lualine_z = {},
-  --       -- lualine_z = {"tabs"}
-  --     },
-  --   })
-  -- end,
 }
