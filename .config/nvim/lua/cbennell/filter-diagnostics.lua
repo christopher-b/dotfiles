@@ -1,7 +1,7 @@
 -- From https://blob42.xiz/blog/neovim-diagnostic-filtering/
 local M = {}
 
-local original_handler = vim.diagnostic.handlers.virtual_text
+local original_handler = vim.diagnostic.handlers.virtual_text.show
 local ns = vim.api.nvim_create_namespace("filter_diagnostics")
 
 --- Filter diagnostics by their source.
@@ -29,13 +29,13 @@ M.filter = function(source)
   vim.diagnostic.hide(ns, current_buf)
 
   -- Override the virtual_text handler to filter diagnostics by source
-  vim.diagnostic.handlers.virtual_text = {
-    show = function(_, bufnr, _, opts)
-      -- get all diagnostics for local buffer
-      local diagnostics = vim.diagnostic.get(bufnr)
-      local filtered = filter_diagnostics(diagnostics, source)
-      original_handler.show(ns, bufnr, filtered, opts)
-    end,
+  -- vim.diagnostic.handlers.virtual_text = {
+  --   show = function(_, bufnr, _, opts)
+  --     -- get all diagnostics for local buffer
+  --     local diagnostics = vim.diagnostic.get(bufnr)
+  --     local filtered = filter_diagnostics(diagnostics, source)
+  --     original_handler.show(ns, bufnr, filtered, opts)
+  --   end,
 
     hide = function(_, bufnr)
       original_handler.hide(ns, bufnr)
@@ -43,16 +43,17 @@ M.filter = function(source)
   }
 
   -- Apply filtered diagnostics to current buffer if any exist
-  local diagnostics = vim.diagnostic.get(current_buf)
-  if #diagnostics > 0 then
-    local filtered = filter_diagnostics(diagnostics, source)
-    vim.diagnostic.show(ns, current_buf, filtered)
-  end
+  -- local diagnostics = vim.diagnostic.get(current_buf)
+  -- if #diagnostics > 0 then
+  --   local filtered = filter_diagnostics(diagnostics, source)
+  --   vim.diagnostic.show(ns, current_buf, filtered)
+  -- end
 end
 
 vim.api.nvim_create_autocmd("DiagnosticChanged", {
   group = vim.api.nvim_create_augroup("diagnostic", { clear = true }),
-  callback = function()
+  callback = function(x, y)
+    -- print(vim.inspect(x))
     M.filter("Standard Ruby")
   end,
 })

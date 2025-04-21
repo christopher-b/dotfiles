@@ -19,6 +19,7 @@ return {
       lualine_b = { "branch", "diff", "diagnostics" },
       lualine_c = {
         { "filename", path = 4 },
+        { "aerial", dense = true, dense_sep = "/" },
       },
       lualine_x = {
         "searchcount",
@@ -48,21 +49,21 @@ return {
         { "location", color = { gui = "NONE" } },
       },
     },
-    tabline = {
-      lualine_a = {
-        {
-          "buffers",
-          color = { gui = "NONE" },
-          use_mode_colors = true,
-          buffers_color = { active = { gui = "NONE" } },
-        },
-      },
-      lualine_b = {},
-      lualine_c = {},
-      lualine_x = {},
-      lualine_y = {},
-      lualine_z = {},
-      -- lualine_z = {"tabs"}
-    },
+    -- tabline = {
+    --   lualine_a = {
+    --     {
+    --       "buffers",
+    --       color = { gui = "NONE" },
+    --       use_mode_colors = true,
+    --       buffers_color = { active = { gui = "NONE" } },
+    --     },
+    --   },
+    --   lualine_b = {},
+    --   lualine_c = {},
+    --   lualine_x = {},
+    --   lualine_y = {},
+    --   lualine_z = {},
+    --   -- lualine_z = {"tabs"}
+    -- },
   },
 }

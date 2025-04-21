@@ -27,11 +27,13 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Vzzzv")
 
 -- Buffer navigation
--- vim.keymap.set("n", "<A-s>", "<Esc>:bnext<cr>")
--- vim.keymap.set("n", "<A-a>", "<Esc>:bprevious<cr>")
 -- These mimic keys used for switching browser tabs
 vim.keymap.set("n", "<A-M-Right>", "<Esc>:bnext<cr>")
 vim.keymap.set("n", "<A-M-Left>", "<Esc>:bprevious<cr>")
+
+-- Tab navigation
+vim.keymap.set("n", "<Leader><tab>", "<cmd>tabnext<cr>")
+vim.keymap.set("n", "<Leader><s-tab>", "<cmd>tabprev<cr>")
 
 -- Quickfix list
 vim.keymap.set("n", "<A-j>", "<cmd>cnext<CR>zz")
