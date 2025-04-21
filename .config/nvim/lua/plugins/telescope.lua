@@ -9,6 +9,9 @@ return {
     { "nvim-tree/nvim-web-devicons" },
     { "nvim-treesitter/nvim-treesitter" },
   },
+  opts = {
+    file_ignore_patterns = { "node_modules", "db/fixtures" },
+  },
   config = function()
     local telescope = require("telescope")
     local actions = require("telescope.actions")
