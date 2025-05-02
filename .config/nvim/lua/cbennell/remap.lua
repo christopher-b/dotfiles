@@ -50,7 +50,7 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- Yank to system
--- vim.keymap.set({ "n", "v" }, "<leader>y", [["*y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["*y]])
 -- vim.keymap.set("n", "<leader>Y", [["*Y]])
 
 -- Move selected lines up and down

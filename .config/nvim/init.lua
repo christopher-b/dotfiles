@@ -43,9 +43,6 @@ require("lazy").setup({
     { import = "plugins/mini-nvim" }, -- Pairs,
     { import = "plugins/smear" },
 
-    {
-      dir = "~/src/diagonal",
-    },
     -- { import = "plugins/startuptime" },
     -- { import = "plugins/vim-rspec" },
     -- { import = "plugins/dap" },
