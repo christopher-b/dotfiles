@@ -12,6 +12,7 @@ alias rmd='rm -rf'
 alias tf='tail -f'
 alias v='nvim'
 alias vim='nvim'
+alias vc='cd ~/.config/nvim && nvim'
 
 # Scripts
 # alias ff='~/.oh-my-zsh-custom/scripts/find-in-files.sh'
@@ -33,6 +34,7 @@ alias ypu='yadm push'
 alias ypl='yadm pull'
 alias ys='yadm status'
 
+# Lando
 alias lo='lando'
 alias lor='lando restart'
 alias lorby='lando rebuild -y'
