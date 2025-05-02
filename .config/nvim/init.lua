@@ -17,6 +17,7 @@ require("lazy").setup({
     { import = "plugins/aerial" },
     { import = "plugins/colors" },
     { import = "plugins/completion" },
+    { import = "plugins/dap" },
     { import = "plugins/formatting" },
     { import = "plugins/lint" },
     { import = "plugins/lsp" },
@@ -33,7 +34,7 @@ require("lazy").setup({
     { import = "plugins/trouble" }, -- Diagnostics
     { import = "plugins/vim-endwise" },
     { import = "plugins/vim-indent-object" },
-    { import = "plugins/vim-rails" },
+    -- { import = "plugins/vim-rails" },
     { import = "plugins/vim-surround" },
     { import = "plugins/vim-tmux-navigator" },
     { import = "plugins/which-key" },
