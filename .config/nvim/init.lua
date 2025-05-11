@@ -31,6 +31,7 @@ require("lazy").setup({
     { import = "plugins/nvim-web-devicons" },
     { import = "plugins/snacks" }, -- Dashboard, indent lines, lazygit, scratch
     { import = "plugins/telescope" },
+    { import = "plugins/tests" },
     { import = "plugins/trouble" }, -- Diagnostics
     { import = "plugins/vim-endwise" },
     { import = "plugins/vim-indent-object" },

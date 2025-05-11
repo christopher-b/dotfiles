@@ -50,8 +50,8 @@ return {
     })
   end,
   keys = {
-    { "<leader>t", "<cmd>NvimTreeToggle<cr>", desc = "NvimTree" },
-    { "<leader>T", "<cmd>NvimTreeFindFile<cr>", desc = "NvimTree: current file" },
+    { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "NvimTree" },
+    { "<leader>E", "<cmd>NvimTreeFindFile<cr>", desc = "NvimTree: current file" },
     -- { "<C-Space>", tree_actions_menu, { buffer = 0, noremap = true, silent = true }}
   },
 }
