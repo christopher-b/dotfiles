@@ -22,7 +22,7 @@ return {
   },
   keys = {
     -- { "<leader>a", "<cmd>AerialToggle!<cr>", desc = "Aerial Toggle" },
-    { "<leader>A", "<cmd>AerialToggle<cr>", desc = "Aerial Toggle and focus" },
-    { "<leader>a", "<cmd>AerialNavToggle<cr>", desc = "Aerial Toggle and focus" },
+    { "<leader>gA", "<cmd>AerialToggle<cr>", desc = "Aerial Toggle and focus" },
+    { "<leader>ga", "<cmd>AerialNavToggle<cr>", desc = "Aerial Toggle and focus" },
   },
 }
