@@ -6,7 +6,7 @@ return {
   lazy = false,
   opts = {
     options = {
-      disabled_filetypes = { "NvimTree" },
+      disabled_filetypes = { "NvimTree", "Avante", "AvanteSelectedFiles", "AvanteInput" },
     },
     extensions = { "lazy", "mason", "nerdtree", "quickfix", "trouble" },
     sections = {

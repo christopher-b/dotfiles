@@ -14,6 +14,7 @@ require("cbennell.lazy")
 -- Plugins
 require("lazy").setup({
   spec = {
+    { import = "plugins/avante" },
     { import = "plugins/aerial" },
     { import = "plugins/colors" },
     { import = "plugins/completion" },

@@ -38,6 +38,10 @@ export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 # Yarn
 # export PATH="$HOME/.yarn/bin:$PATH"
 
+if [[ "$(uname)" == "Darwin" ]]; then
+  export PATH="$PATH:/Users/cbennell/.lmstudio/bin"
+fi
+
 # FZF
 # export FZF_DEFAULT_COMMAND='find .'
 # export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
