@@ -3,7 +3,7 @@ return {
   dependencies = {
     "saghen/blink.cmp",
     {
-      "williamboman/mason-lspconfig.nvim",
+      "mason-org/mason-lspconfig.nvim",
       opts = {
         automatic_installation = false,
         ensure_installed = {
@@ -22,7 +22,7 @@ return {
     },
     {
       -- Must come after mason-lspconfig, so that this is evaluated first
-      "williamboman/mason.nvim",
+      "mason-org/mason.nvim",
       opts = {
         ui = {
           icons = {
@@ -48,21 +48,21 @@ return {
   },
   init = function()
     -- Automatically set up LSP severs installed by Mason
-    require("mason-lspconfig").setup_handlers({
-      -- Default handler
-      function(server_name)
-        -- Blink adds additional capabilities that we report to the LSP
-        local capabilities = require("blink.cmp").get_lsp_capabilities()
-        vim.lsp.config(server_name, { capabilities = capabilities })
-        vim.lsp.enable(server_name)
-        -- require("lspconfig")[server_name].setup({ capabilities = capabilities })
-      end,
-
-      -- Handler overrides for specific setup. Ex:
-      -- ["rust_analyzer"] = function()
-      --   require("rust-tools").setup {}
-      -- end
-    })
+    -- require("mason-lspconfig").setup_handlers({
+    --   -- Default handler
+    --   function(server_name)
+    --     -- Blink adds additional capabilities that we report to the LSP
+    --     local capabilities = require("blink.cmp").get_lsp_capabilities()
+    --     vim.lsp.config(server_name, { capabilities = capabilities })
+    --     vim.lsp.enable(server_name)
+    --     -- require("lspconfig")[server_name].setup({ capabilities = capabilities })
+    --   end,
+    --
+    --   -- Handler overrides for specific setup. Ex:
+    --   -- ["rust_analyzer"] = function()
+    --   --   require("rust-tools").setup {}
+    --   -- end
+    -- })
 
     -- We currently have conform doing format-on-save
     -- vim.api.nvim_create_autocmd("LspAttach", {
