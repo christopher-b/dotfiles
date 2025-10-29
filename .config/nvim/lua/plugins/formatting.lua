@@ -4,8 +4,18 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   cmd = { "ConformInfo" },
   opts = {
+    formatters = {
+      rustywind = {
+        command = "rustywind",
+        args = { "--stdin" },
+        stdin = true,
+      },
+    },
     formatters_by_ft = {
       css = { "prettier" },
+      handlebars = { "prettier" },
+      -- handlebars = { "rustywind" },
+      -- hbs = { "rustywind" },
       html = { "prettier" },
       javascript = { "prettier" },
       json = { "prettier" },
@@ -20,7 +30,8 @@ return {
     },
     -- This sets up a format-on-save autocommand
     format_on_save = {
-      timeout_ms = 500,
+      timeout_ms = 2500,
+      lsp_fallback = true,
     },
   },
   keys = {

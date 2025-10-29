@@ -26,6 +26,28 @@ return {
       -- Options override for custom providers
       provider_opts = {},
     },
+    -- MCPHub Setup
+    system_prompt = function()
+      local hub = require("mcphub").get_hub_instance()
+      return hub and hub:get_active_servers_prompt() or ""
+    end,
+    custom_tools = function()
+      return {
+        require("mcphub.extensions.avante").mcp_tool(),
+      }
+    end,
+    disabled_tools = {
+      "list_files", -- Built-in file operations
+      "search_files",
+      "read_file",
+      "create_file",
+      "rename_file",
+      "delete_file",
+      "create_dir",
+      "rename_dir",
+      "delete_dir",
+      "bash", -- Built-in terminal access
+    },
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
   build = "make",
@@ -39,13 +61,23 @@ return {
     "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
     "ibhagwan/fzf-lua", -- for file_selector provider fzf
     "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
+    "zbirenbaum/copilot.lua", -- for providers='copilot'
     {
-      "zbirenbaum/copilot.lua", -- for providers='copilot'
-      config = function()
-        require("copilot").setup({})
-      end,
+      "ravitemer/mcphub.nvim",
+      dependencies = { "nvim-lua/plenary.nvim" },
+      build = "npm install -g mcp-hub@latest", -- Installs `mcp-hub` node binary globally
+      opts = {
+        extensions = {
+          avante = {
+            make_slash_commands = true, -- make /slash commands from MCP server prompts
+          },
+        },
+      },
+      -- config = true,
+      -- config = function()
+      --   require("mcphub").setup()
+      -- end,
     },
-
     -- {
     --   -- Make sure to set this up properly if you have lazy=true
     --   "MeanderingProgrammer/render-markdown.nvim",
