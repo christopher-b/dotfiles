@@ -1,7 +1,7 @@
 return {
-  "adam12/ruby-lsp.nvim",
-  -- dir = "~/src/ruby-lsp.nvim/",
-  -- dev = true,
+  -- "adam12/ruby-lsp.nvim",
+  dir = "~/src/ruby-lsp.nvim/",
+  dev = true,
   ft = { "ruby", "eruby" },
   dependencies = {
     "nvim-lua/plenary.nvim",

@@ -14,7 +14,7 @@ require("cbennell.lazy")
 -- Plugins
 require("lazy").setup({
   spec = {
-    { import = "plugins/avante" },
+    -- { import = "plugins/avante" },
     { import = "plugins/aerial" },
     { import = "plugins/colors" },
     { import = "plugins/completion" },
@@ -30,6 +30,7 @@ require("lazy").setup({
     { import = "plugins/nvim-treesitter" },
     { import = "plugins/nvim-treesitter-text-objects" },
     { import = "plugins/nvim-web-devicons" },
+    { import = "plugins/opencode" },
     { import = "plugins/snacks" }, -- Dashboard, indent lines, lazygit, scratch
     { import = "plugins/telescope" },
     { import = "plugins/tests" },
