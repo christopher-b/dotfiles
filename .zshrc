@@ -25,13 +25,16 @@ zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 # zstyle ':omz:update' frequency 7
 
 # Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
+DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
+
+# Performance?
+ZSH_DISABLE_COMPFIX=true
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
@@ -66,15 +69,15 @@ plugins=(
   # docker
   # docker-compose
   #
-  bundler
+  # bundler
   fzf-tab
-  git
-  macos
-  mise
+  # git
+  # macos
+  # mise
   tmux
-  web-search
-  zsh-autosuggestions
-  zsh-syntax-highlighting
+  # web-search
+  # zsh-autosuggestions
+  # zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -105,5 +108,10 @@ ZLE_RPROMPT_INDENT=0
 # @TODO move to exports
 export PATH="/home/cbennell/.lando/bin${PATH+:$PATH}"; #landopath
 
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/cbennell/.lmstudio/bin"
+# End of LM Studio CLI section
+
 # Profile zsh startup. Paied with mod load call at top of this file
 # zprof
+

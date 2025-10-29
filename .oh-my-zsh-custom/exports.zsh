@@ -18,6 +18,9 @@ export LESS_TERMCAP_md="$ORANGE"
 export PATH="/Users/cbennell/.lando/bin${PATH+:$PATH}"; #landopath
 export PATH="/home/cbennell/.local/bin:$PATH"
 
+# Cargo
+export PATH="/home/cbennell/.cargo/bin:$PATH"
+
 # For capybara-webkit
 # export PATH="/Users/cbennell/Applications/Qt5.5.0/5.5/clang_64/bin:$PATH"
 
