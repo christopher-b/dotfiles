@@ -36,10 +36,10 @@ vim.keymap.set("n", "<Leader><tab>", "<cmd>tabnext<cr>")
 vim.keymap.set("n", "<Leader><s-tab>", "<cmd>tabprev<cr>")
 
 -- Resize windows with option+hjkl
-vim.keymap.set("n", "<C-M-h>", ":vertical resize -2<CR>", { desc = "Shrink window left" })
-vim.keymap.set("n", "<C-M-l>", ":vertical resize +2<CR>", { desc = "Grow window right" })
-vim.keymap.set("n", "<C-M-j>", ":resize -2<CR>", { desc = "Shrink window down" })
-vim.keymap.set("n", "<C-M-k>", ":resize +2<CR>", { desc = "Grow window up" })
+vim.keymap.set("n", "<C-M-h>", ":vertical resize -4<CR>", { desc = "Shrink window left" })
+vim.keymap.set("n", "<C-M-l>", ":vertical resize +4<CR>", { desc = "Grow window right" })
+vim.keymap.set("n", "<C-M-j>", ":resize -4<CR>", { desc = "Shrink window down" })
+vim.keymap.set("n", "<C-M-k>", ":resize +4<CR>", { desc = "Grow window up" })
 
 -- Quickfix list
 vim.keymap.set("n", "<A-j>", "<cmd>cnext<CR>zz")

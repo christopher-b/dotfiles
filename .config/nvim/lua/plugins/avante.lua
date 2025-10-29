@@ -4,6 +4,13 @@ return {
   version = false,
   opts = {
     provider = "copilot",
+    copilot = {
+      -- model = "claude-3.7-sonnet",
+      -- model = "claude-4.0-opus",
+      -- temperature = 0,
+      -- max_tokens = 8192,
+    },
+    -- auto_suggestions_provider = "claude",
     -- provider = "openai",
     -- openai = {
     --   endpoint = "https://api.openai.com/v1",
@@ -15,7 +22,7 @@ return {
     -- },
     selector = {
       -- @alias avante.SelectorProvider "native" | "fzf_lua" | "mini_pick" | "snacks" | "telescope" | fun(selector: avante.ui.Selector): nil
-      provider = "fzf",
+      provider = "telescope",
       -- Options override for custom providers
       provider_opts = {},
     },
@@ -32,7 +39,13 @@ return {
     "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
     "ibhagwan/fzf-lua", -- for file_selector provider fzf
     "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-    "zbirenbaum/copilot.lua", -- for providers='copilot'
+    {
+      "zbirenbaum/copilot.lua", -- for providers='copilot'
+      config = function()
+        require("copilot").setup({})
+      end,
+    },
+
     -- {
     --   -- Make sure to set this up properly if you have lazy=true
     --   "MeanderingProgrammer/render-markdown.nvim",

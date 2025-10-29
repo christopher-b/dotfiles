@@ -43,7 +43,7 @@ require("lazy").setup({
 
     { import = "plugins/bufferline" },
     { import = "plugins/mini-nvim" }, -- Pairs,
-    { import = "plugins/smear" },
+    -- { import = "plugins/smear" },
 
     -- { import = "plugins/startuptime" },
     -- { import = "plugins/vim-rspec" },
