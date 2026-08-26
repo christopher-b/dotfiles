@@ -3,6 +3,7 @@
 # Misc
 alias :q='exit'
 alias chrome='open -a "Google Chrome"'
+alias dsk='du -hd1 | sort -h'
 alias gr='git remote -v'
 alias grep='grep -E'
 alias k='kubectl'

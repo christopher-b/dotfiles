@@ -1,12 +1,12 @@
 return {
   "saghen/blink.cmp",
   dependencies = {
-    "neovim/nvim-lspconfig",
+    -- "neovim/nvim-lspconfig",
     "rafamadriz/friendly-snippets",
     "mikavilpas/blink-ripgrep.nvim",
     -- "giuxtaposition/blink-cmp-copilot",
   },
-  version = "*",
+  version = "1.*",
   opts = {
     sources = {
       default = { "lsp", "path", "snippets", "buffer", "ripgrep" },
@@ -42,4 +42,5 @@ return {
     -- experimental signature help support
     -- signature = { enabled = true }
   },
+  opts_extend = { "sources.default" }
 }

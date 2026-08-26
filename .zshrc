@@ -115,3 +115,6 @@ export PATH="$PATH:/Users/cbennell/.lmstudio/bin"
 # Profile zsh startup. Paied with mod load call at top of this file
 # zprof
 
+
+# Added by Antigravity
+export PATH="/Users/cbennell/.antigravity/antigravity/bin:$PATH"

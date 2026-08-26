@@ -7,7 +7,7 @@ return {
     { "nvim-lua/plenary.nvim" },
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     { "nvim-tree/nvim-web-devicons" },
-    { "nvim-treesitter/nvim-treesitter" },
+    -- { "nvim-treesitter/nvim-treesitter" },
   },
   opts = {
     file_ignore_patterns = { "node_modules", "db/fixtures" },
