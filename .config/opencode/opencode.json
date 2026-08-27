@@ -1,0 +1,44 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "azure-other": {
+      "name": "Foundry (Other)",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "https://cb-dev-agentic-coding-resource.services.ai.azure.com/openai/v1"
+      },
+      "models": {
+        "Kimi-K2.6": {}
+      }
+    },
+    "azure-openai": {
+      "name": "Foundry (OpenAI)",
+      "npm": "@ai-sdk/openai",
+      "api": "https://cb-dev-agentic-coding-resource.services.ai.azure.com/openai/v1",
+      "models": {
+        "gpt-5.6-luna": {
+          "name": "GPT-5.6 Luna"
+        },
+        "gpt-5.5": {
+          "name": "GPT-5.5"
+        },
+        "gpt-5.4-nano": {
+          "name": "GPT-5.4-Nano"
+        }
+      }
+    },
+    "azure-anthropic": {
+      "name": "Foundry (Anthropic)",
+      "npm": "@ai-sdk/anthropic",
+      "api": "https://cb-dev-agentic-coding-resource.services.ai.azure.com/anthropic/v1",
+      "models": {
+        "claude-opus-5": {
+          "name": "Claude Opus 5"
+        },
+        "claude-sonnet-5": {
+          "name": "Claude Sonnet 5"
+        }
+      }
+    }
+  }
+}
