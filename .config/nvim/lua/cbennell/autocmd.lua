@@ -1,54 +1,34 @@
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
-local my_group = augroup("myGroup", { clear = true })
+local group = augroup("cbennell_autocmd", { clear = true })
 
 -- Strip whitespace before save
 autocmd("BufWritePre", {
-  group = my_group,
+  group = group,
   pattern = { "*" },
   command = [[:%s/\s\+$//e]],
 })
 
 -- Switch line numbering in normal/insert
 autocmd("InsertEnter", {
-  group = my_group,
+  group = group,
   command = ":set norelativenumber",
   desc = "Toggle relativenumber option when entering and leaving insert mode",
 })
 autocmd("InsertLeave", {
-  group = my_group,
+  group = group,
   command = ":set relativenumber",
   desc = "Toggle relativenumber option when entering and leaving insert mode",
 })
 
 autocmd({ "VimEnter", "WinEnter", "BufWinEnter" }, {
-  group = my_group,
+  group = group,
   command = "setlocal cursorline",
   desc = "Cursor line only on active pane",
 })
 autocmd("WinLeave", {
-  group = my_group,
+  group = group,
   command = "setlocal nocursorline",
   desc = "Cursor line only on active pane",
 })
 
--- autocmd("BufWritePre", {
---   group = my_group,
---   pattern = "*",
---   callback = function()
---     vim.lsp.buf.format({ async = false })
---   end,
---   desc = "Auto format on save using LSP"
--- })
--- autocmd("InsertLeave", {
---   group = mygroup,
---   desc = "Save a file when leaving insert, if writable",
---   callback = function()
---     local current_file_writable = vim.fn.filewritable(vim.fn.expand("%:p"))
---     local found_file = vim.fn.findfile(vim.fn.expand("%:t"), vim.fn.expand("%:h"))
-
---     if(current_file_writable or not found_file) then
---       vim.cmd("silent! w!")
---     end
---   end
--- })

@@ -12,7 +12,7 @@ vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 -- [[ Files / Buffers ]]
 -- Save buffer
 vim.keymap.set("n", "<Leader>s", "<cmd>write<CR>", { desc = "Save current buffer" })
-vim.keymap.set("i", "<M-s>", "normal :w")
+
 -- New file
 vim.keymap.set("n", "<Leader>n", ":enew<CR>")
 -- Close current buffer without messing up tabs
@@ -24,12 +24,14 @@ vim.keymap.set("n", "<Leader>W", ":tabclose<CR>")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Vzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
 
 -- Buffer navigation
 -- These mimic keys used for switching browser tabs
-vim.keymap.set("n", "<A-M-Right>", "<Esc>:bnext<cr>")
-vim.keymap.set("n", "<A-M-Left>", "<Esc>:bprevious<cr>")
+vim.keymap.set("n", "<M-D-Right>", "<Esc>:bnext<cr>", { noremap = true, silent = true })
+vim.keymap.set("n", "<M-D-Left>", "<Esc>:bprevious<cr>", { noremap = true, silent = true })
+-- vim.keymap.set("n", "<A-M-Right>", "<Esc>:bnext<cr>")
+-- vim.keymap.set("n", "<A-M-Left>", "<Esc>:bprevious<cr>")
 
 -- Tab navigation
 vim.keymap.set("n", "<Leader><tab>", "<cmd>tabnext<cr>")
@@ -74,47 +76,9 @@ vim.keymap.set({ "i", "n" }, "<A-CR>", "<ESC>o")
 vim.keymap.set("n", "J", "mzJ`z")
 
 -- Comments
-vim.keymap.set("n", "<Leader>/", "gcc")
+vim.keymap.set("n", "<Leader>/", "gcc", {remap=true, desc="Toggle comment"})
 vim.keymap.set("v", "<Leader>/", "gc")
 
---[[
--- Move current line down up
-vim.keymap.set("n", "A-j> ddp
--- Move current line up own
-vim.keymap.set("n", "A-k> dd2kp
---]]
-
---[[ ?? ]]
 -- Search escape highlight
 vim.keymap.set("n", "mm", ":noh<CR>")
 
---[[
--- Buffer/tab navigation
-vim.keymap.set("n", "leader>t <Esc>:tabnew<CR>
-vim.keymap.set("n", "A-w> <Esc>:bnext<CR>
-vim.keymap.set("n", "A-q> <Esc>:bprevious<CR>
-vim.keymap.set("n", "A-Q> <Esc>gT<CR>
-vim.keymap.set("n", "A-W> <Esc>gt<CR>
-
-
--- Resize windows
-map _ :resize -3<CR>
-map + :resize +3<CR>
-map - :3winc <<CR>
-map = :3winc ><CR>
-
--- Edit vim configuration
-vim.keymap.set("n", "<Leader>ve :e $MYVIMRC<CR>
--- Reload vimr configuration file
-vim.keymap.set("n", "<Leader>vr :source $MYVIMRC<CR>
-
-
--- vim.keymap.set("v", " > >gv
--- vim.keymap.set("v", " <gv
-
--- Copy/paste
-map <Leader>y --+y
-
--- Yank current line
-noremap Y ^vg_y
---]]

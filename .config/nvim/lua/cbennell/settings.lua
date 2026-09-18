@@ -24,7 +24,13 @@ vim.o.scrolloff = 5
 vim.o.splitbelow = true
 vim.o.splitright = true
 
-vim.o.undodir = os.getenv("HOME") .. ".vim/undodir"
+-- Persistent undo
+vim.o.undofile = true
+-- local undodir = vim.fn.stdpath("state") .. "/undo"
+-- vim.fn.mkdir(undodir, "p")
+--
+-- vim.opt.undofile = true
+-- vim.opt.undodir = undodir
 
 -- Use rg as default :grep engine
 local function set_grepprg()

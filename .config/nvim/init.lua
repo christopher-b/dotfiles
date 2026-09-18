@@ -9,7 +9,6 @@ require("cbennell.lazy")
 -- vim.lsp.enable("ruby_lsp")
 -- vim.lsp.set_log_level('trace')
 -- vim.lsp.set_log_level('debug')
--- require('vim.lsp.log').set_format_func(vim.inspect)
 
 -- Plugins
 require("lazy").setup({
