@@ -21,6 +21,9 @@ export PATH="/home/cbennell/.local/bin:$PATH"
 # Cargo
 export PATH="/home/cbennell/.cargo/bin:$PATH"
 
+# NPM
+export PATH=~/.npm-global/bin:$PATH
+
 # For capybara-webkit
 # export PATH="/Users/cbennell/Applications/Qt5.5.0/5.5/clang_64/bin:$PATH"
 
@@ -51,3 +54,6 @@ fi
 export FZF_DEFAULT_COMMAND="fd --type file"
 export FZF_CTRL_T_OPTS=" --preview 'bat -n --color=always {}'"
 export FZF_TMUX_OPTS="-p80%,60%"
+
+# Mise encryption
+export SOPS_AGE_KEY_FILE="$HOME/.config/mise/age.txt"
